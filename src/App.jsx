@@ -11,9 +11,11 @@ import Login from "./Pages/Auth/Login/Login";
 // ================================
 // LEARNER ROUTES
 // ================================
-import LearnerRoutes from "./routes/LearnerRoutes";
+// import LearnerRoutes from "./routes/LearnerRoutes";
 
-import AdminRoutes from "./routes/AdminRoutes"
+// import AdminRoutes from "./routes/AdminRoutes"
+import AboutUs from "./Pages/AboutUs/AboutUs";
+import ContactUs from "./Pages/ContactUs/ContactUs";
 function App() {
   return (
     // <BrowserRouter>
@@ -72,9 +74,8 @@ function App() {
     //   </Routes>
     // </BrowserRouter>
     // <AdminDashboard/>
-   <BrowserRouter>
-  <AdminRoutes/>
-      </BrowserRouter> 
+  //  <AboutUs/> 
+  <ContactUs/>
    
   );
 }
