@@ -1,0 +1,1197 @@
+/* ================================================================
+   RECOMMENDATION SECTION
+================================================================ */
+
+.recommendation-section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ================================================================
+   SECTION HEADER
+================================================================ */
+
+.recommendation-section__header {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  box-sizing: border-box;
+}
+
+.recommendation-section__heading {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.recommendation-section__eyebrow {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #6c8290;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.recommendation-section__title {
+  margin: 0;
+
+  color: #17384a;
+  font-size: 21px;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.recommendation-section__description {
+  max-width: 700px;
+
+  margin: 7px 0 0;
+
+  color: #718692;
+  font-size: 16px;
+  line-height: 1.55;
+
+  overflow-wrap: break-word;
+}
+
+.recommendation-section__view-all {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 38px;
+  padding: 8px 15px;
+
+  border: 1px solid #d8e4ea;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #176b91;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.recommendation-section__view-all svg {
+  width: 15px;
+  height: 15px;
+
+  transition: transform 180ms ease;
+}
+
+.recommendation-section__view-all:hover {
+  border-color: #9dcddd;
+  background: #f5fbfd;
+  color: #0f5878;
+}
+
+.recommendation-section__view-all:hover svg {
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   FEATURED CARD
+================================================================ */
+
+.recommendation-featured-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: #fffaf1;
+  border-color: #eee2cc;
+
+  box-sizing: border-box;
+}
+
+.recommendation-featured-card__layout {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, 0.34fr)
+    minmax(0, 1fr);
+
+  gap: 25px;
+
+  box-sizing: border-box;
+}
+
+/* ================================================================
+   FEATURED VISUAL
+================================================================ */
+
+.recommendation-featured-card__visual {
+  position: relative;
+
+  min-height: 285px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #f3e9d7;
+
+  box-sizing: border-box;
+}
+
+.recommendation-featured-card__visual-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  border: 1px solid #e2d2b9;
+  border-radius: 20px;
+
+  background: #fffaf1;
+  color: #b27b35;
+
+  box-shadow: 0 8px 20px rgba(103, 76, 39, 0.08);
+}
+
+.recommendation-featured-card__visual-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.recommendation-featured-card__visual-label {
+  margin-top: 15px;
+
+  color: #86663d;
+
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.3;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.recommendation-featured-card__visual-pattern {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+
+  width: 140px;
+  height: 140px;
+
+  pointer-events: none;
+}
+
+.recommendation-featured-card__visual-pattern span {
+  position: absolute;
+
+  display: block;
+
+  border: 1px solid rgba(139, 102, 57, 0.12);
+  border-radius: 50%;
+}
+
+.recommendation-featured-card__visual-pattern span:nth-child(1) {
+  inset: 0;
+}
+
+.recommendation-featured-card__visual-pattern span:nth-child(2) {
+  inset: 20px;
+}
+
+.recommendation-featured-card__visual-pattern span:nth-child(3) {
+  inset: 40px;
+}
+
+/* ================================================================
+   FEATURED CONTENT
+================================================================ */
+
+.recommendation-featured-card__content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+.recommendation-featured-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  min-width: 0;
+}
+
+.recommendation-featured-card__title-area {
+  min-width: 0;
+}
+
+.recommendation-featured-card__badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 10px;
+}
+
+.recommendation-featured-card__title-area h3 {
+  margin: 0;
+
+  color: #27495a;
+  font-size: 22px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+
+  overflow-wrap: break-word;
+}
+
+.recommendation-featured-card__category {
+  margin: 5px 0 0;
+
+  color: #7d8f96;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.recommendation-featured-card__match {
+  flex: 0 0 auto;
+
+  min-width: 82px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 3px;
+}
+
+.recommendation-featured-card__match strong {
+  color: #39815f;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.recommendation-featured-card__match span {
+  color: #829399;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.recommendation-featured-card__description {
+  max-width: 780px;
+
+  margin: 16px 0 18px;
+
+  color: #657d87;
+  font-size: 16px;
+  line-height: 1.6;
+
+  overflow-wrap: break-word;
+}
+
+/* ================================================================
+   FEATURED META
+================================================================ */
+
+.recommendation-featured-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 9px 18px;
+
+  padding: 12px 0;
+
+  border-top: 1px solid #eee5d8;
+  border-bottom: 1px solid #eee5d8;
+}
+
+.recommendation-meta-item {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #6f858e;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.recommendation-meta-item svg {
+  width: 15px;
+  height: 15px;
+
+  color: #9a835f;
+}
+
+.recommendation-meta-item--rating svg {
+  color: #c79042;
+}
+
+/* ================================================================
+   FEATURED PROGRESS
+================================================================ */
+
+.recommendation-featured-card__progress {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-top: 17px;
+}
+
+.recommendation-featured-card__progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-bottom: 8px;
+}
+
+.recommendation-featured-card__progress-header span {
+  color: #718790;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.recommendation-featured-card__progress-header strong {
+  color: #4c765f;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+/* ================================================================
+   FEATURED BOTTOM
+================================================================ */
+
+.recommendation-featured-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  margin-top: 17px;
+}
+
+.recommendation-featured-card__reason {
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  color: #71858d;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.recommendation-featured-card__reason svg {
+  flex: 0 0 auto;
+
+  width: 17px;
+  height: 17px;
+
+  margin-top: 2px;
+
+  color: #b08243;
+}
+
+.recommendation-featured-card__reason strong {
+  color: #536d76;
+  font-weight: 750;
+}
+
+.recommendation-featured-card__action {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 40px;
+  padding: 9px 15px;
+
+  border: 1px solid #dfc9a9;
+  border-radius: 10px;
+
+  background: #fffaf1;
+  color: #8c6330;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.recommendation-featured-card__action svg {
+  width: 15px;
+  height: 15px;
+
+  transition: transform 180ms ease;
+}
+
+.recommendation-featured-card__action:hover {
+  border-color: #cfb487;
+  background: #f8efdf;
+}
+
+.recommendation-featured-card__action:hover svg {
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   OTHER COURSE GRID
+================================================================ */
+
+.recommendation-courses-grid {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  box-sizing: border-box;
+}
+
+.recommendation-courses-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ================================================================
+   COURSE CARD
+================================================================ */
+
+.recommendation-course-card {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 380px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.recommendation-course-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 24px rgba(36, 69, 82, 0.07);
+}
+
+/* ================================================================
+   FUNCTIONAL LIGHT COLORS
+================================================================ */
+
+.recommendation-course-card--violet {
+  background: #faf8fd;
+  border-color: #e7e0f1;
+}
+
+.recommendation-course-card--mint {
+  background: #f6fbf8;
+  border-color: #dcece2;
+}
+
+.recommendation-course-card--peach {
+  background: #fff9f4;
+  border-color: #f0e2d5;
+}
+
+/* ================================================================
+   COURSE CARD TOP
+================================================================ */
+
+.recommendation-course-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 19px;
+}
+
+.recommendation-course-card__icon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.recommendation-course-card__icon--violet {
+  background: #eee8f8;
+  color: #795ba9;
+}
+
+.recommendation-course-card__icon--mint {
+  background: #e5f4eb;
+  color: #438363;
+}
+
+.recommendation-course-card__icon--peach {
+  background: #fbeadf;
+  color: #b56d42;
+}
+
+/* ================================================================
+   COURSE CARD CONTENT
+================================================================ */
+
+.recommendation-course-card__content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.recommendation-course-card__content h3 {
+  margin: 0;
+
+  color: #294e5f;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+
+  overflow-wrap: break-word;
+}
+
+.recommendation-course-card__category {
+  margin: 5px 0 0;
+
+  color: #7d9098;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.recommendation-course-card__tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.recommendation-course-card__tags > span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #7a8c94;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.recommendation-course-card__tags > span svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ================================================================
+   COURSE PROGRESS
+================================================================ */
+
+.recommendation-course-card__progress {
+  width: 100%;
+  min-width: 0;
+
+  margin-top: 22px;
+}
+
+.recommendation-course-card__progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 8px;
+}
+
+.recommendation-course-card__progress-header span {
+  color: #7b8e96;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.recommendation-course-card__progress-header strong {
+  color: #506e78;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+/* ================================================================
+   COURSE REASON
+================================================================ */
+
+.recommendation-course-card__reason {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+
+  margin-top: 17px;
+  padding: 10px;
+
+  border: 1px solid rgba(128, 151, 160, 0.16);
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  color: #72868e;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.recommendation-course-card__reason svg {
+  flex: 0 0 auto;
+
+  width: 15px;
+  height: 15px;
+
+  margin-top: 2px;
+
+  color: #608f76;
+}
+
+/* ================================================================
+   COURSE FOOTER
+================================================================ */
+
+.recommendation-course-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: 20px;
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(125, 148, 156, 0.16);
+}
+
+.recommendation-course-card__rating {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #687e87;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.recommendation-course-card__rating svg {
+  width: 15px;
+  height: 15px;
+
+  color: #c38b3d;
+}
+
+.recommendation-course-card__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #267d98;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.recommendation-course-card__action svg {
+  width: 14px;
+  height: 14px;
+
+  transition: transform 180ms ease;
+}
+
+.recommendation-course-card__action:hover svg {
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   BOTTOM INSIGHT
+================================================================ */
+
+.recommendation-section__insight {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #dce9e5;
+  border-radius: 12px;
+
+  background: #f5faf8;
+
+  box-sizing: border-box;
+}
+
+.recommendation-section__insight-content {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.recommendation-section__insight-icon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 9px;
+
+  background: #e3f3ea;
+  color: #4a906d;
+}
+
+.recommendation-section__insight-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.recommendation-section__insight-content > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.recommendation-section__insight-content strong {
+  color: #416253;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.recommendation-section__insight-content div span {
+  color: #789087;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.recommendation-section__insight-action {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #347d61;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.recommendation-section__insight-action svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ================================================================
+   FOCUS STATES
+================================================================ */
+
+.recommendation-section__view-all:focus-visible,
+.recommendation-featured-card__action:focus-visible,
+.recommendation-course-card__action:focus-visible,
+.recommendation-section__insight-action:focus-visible {
+  outline: 3px solid rgba(39, 153, 194, 0.18);
+  outline-offset: 3px;
+}
+
+/* ================================================================
+   1200px
+================================================================ */
+
+@media (max-width: 1200px) {
+  .recommendation-featured-card__layout {
+    grid-template-columns:
+      minmax(160px, 0.3fr)
+      minmax(0, 1fr);
+
+    gap: 20px;
+  }
+
+  .recommendation-courses-grid {
+    gap: 14px;
+  }
+
+  .recommendation-course-card {
+    min-height: 370px;
+  }
+
+  .recommendation-course-card__tags {
+    gap: 7px;
+  }
+}
+
+/* ================================================================
+   1100px
+   Sidebar reduces the available dashboard width.
+================================================================ */
+
+@media (max-width: 1100px) {
+  .recommendation-featured-card__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .recommendation-featured-card__visual {
+    min-height: 150px;
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    gap: 14px;
+  }
+
+  .recommendation-featured-card__visual-icon {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 15px;
+  }
+
+  .recommendation-featured-card__visual-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .recommendation-featured-card__visual-label {
+    margin-top: 0;
+  }
+
+  .recommendation-featured-card__visual-pattern {
+    right: -15px;
+    bottom: -65px;
+  }
+
+  .recommendation-courses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ================================================================
+   850px
+================================================================ */
+
+@media (max-width: 850px) {
+  .recommendation-section__header {
+    align-items: flex-start;
+  }
+
+  .recommendation-section__title {
+    font-size: 20px;
+  }
+
+  .recommendation-featured-card__title-area h3 {
+    font-size: 20px;
+  }
+
+  .recommendation-featured-card__top {
+    gap: 15px;
+  }
+
+  .recommendation-featured-card__meta {
+    gap: 9px 14px;
+  }
+}
+
+/* ================================================================
+   700px
+================================================================ */
+
+@media (max-width: 700px) {
+  .recommendation-section__header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 13px;
+  }
+
+  .recommendation-section__view-all {
+    width: auto;
+  }
+
+  .recommendation-courses-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .recommendation-course-card {
+    min-height: auto;
+  }
+
+  .recommendation-featured-card__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .recommendation-featured-card__action {
+    width: 100%;
+  }
+
+  .recommendation-section__insight {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .recommendation-section__insight-action {
+    align-self: flex-start;
+  }
+}
+
+/* ================================================================
+   520px
+================================================================ */
+
+@media (max-width: 520px) {
+  .recommendation-section {
+    gap: 15px;
+  }
+
+  .recommendation-section__title {
+    font-size: 19px;
+  }
+
+  .recommendation-section__description {
+    font-size: 16px;
+  }
+
+  .recommendation-section__view-all {
+    width: 100%;
+  }
+
+  .recommendation-featured-card__visual {
+    min-height: 120px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+  }
+
+  .recommendation-featured-card__visual-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .recommendation-featured-card__visual-label {
+    font-size: 10px;
+  }
+
+  .recommendation-featured-card__top {
+    flex-direction: column;
+
+    gap: 13px;
+  }
+
+  .recommendation-featured-card__match {
+    align-items: flex-start;
+  }
+
+  .recommendation-featured-card__match strong {
+    font-size: 22px;
+  }
+
+  .recommendation-featured-card__description {
+    margin-top: 14px;
+  }
+
+  .recommendation-featured-card__meta {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .recommendation-featured-card__reason {
+    width: 100%;
+  }
+
+  .recommendation-course-card__footer {
+    align-items: flex-start;
+  }
+
+  .recommendation-section__insight-content {
+    align-items: flex-start;
+  }
+}
+
+/* ================================================================
+   400px
+================================================================ */
+
+@media (max-width: 400px) {
+  .recommendation-featured-card__title-area h3 {
+    font-size: 18px;
+  }
+
+  .recommendation-featured-card__category {
+    font-size: 16px;
+  }
+
+  .recommendation-featured-card__reason {
+    align-items: flex-start;
+  }
+
+  .recommendation-featured-card__action {
+    width: 100%;
+  }
+
+  .recommendation-course-card__action {
+    font-size: 16px;
+  }
+
+  .recommendation-section__insight-action {
+    width: 100%;
+
+    justify-content: center;
+
+    min-height: 36px;
+    padding: 7px;
+
+    border: 1px solid #d4e4dd;
+    border-radius: 9px;
+
+    background: #ffffff;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .recommendation-section__view-all,
+  .recommendation-section__view-all svg,
+  .recommendation-featured-card__action,
+  .recommendation-featured-card__action svg,
+  .recommendation-course-card,
+  .recommendation-course-card__action svg {
+    transition: none;
+  }
+}

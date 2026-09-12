@@ -1,0 +1,13 @@
+/* TrainingPrograms.css */
+
+.training-programs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.training-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}

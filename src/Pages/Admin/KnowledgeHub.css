@@ -1,0 +1,44 @@
+/* KnowledgeHub.css */
+
+.knowledge-hub-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.knowledge-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.file-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.file-type-pdf {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.file-type-docx {
+  background: #DBEAFE;
+  color: #2563EB;
+}
+
+.file-type-pptx {
+  background: #FFEDD5;
+  color: #EA580C;
+}
+
+.file-type-video {
+  background: #F3E8FF;
+  color: #9333EA;
+}

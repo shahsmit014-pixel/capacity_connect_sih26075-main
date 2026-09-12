@@ -1,0 +1,936 @@
+/* =========================================================
+   ROOT
+========================================================= */
+
+.cc-empty-state {
+  --empty-primary: #334155;
+  --empty-primary-dark: #1e293b;
+  --empty-secondary: #64748b;
+
+  --empty-text: #172033;
+  --empty-muted: #64748b;
+
+  --empty-surface: #ffffff;
+
+  --empty-border: rgba(148, 163, 184, 0.2);
+
+  --empty-icon-size: 74px;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 48px 28px;
+
+  overflow: hidden;
+
+  color: var(--empty-text);
+}
+
+.cc-empty-full-width {
+  width: 100%;
+}
+
+.cc-empty-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 650px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* =========================================================
+   BACKGROUND ATMOSPHERE
+========================================================= */
+
+.cc-empty-state::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(100, 116, 139, 0.07),
+    transparent 68%
+  );
+
+  pointer-events: none;
+}
+
+.cc-empty-state::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: 10%;
+  right: 5%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(148, 163, 184, 0.05),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   ICON SYSTEM
+========================================================= */
+
+.cc-empty-icon-wrap {
+  --icon-size: var(--empty-icon-size);
+
+  position: relative;
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+}
+
+.cc-empty-icon-glow {
+  position: absolute;
+
+  width: 145%;
+  height: 145%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(100, 116, 139, 0.12),
+    transparent 68%
+  );
+
+  filter: blur(10px);
+
+  animation: cc-empty-glow 4s ease-in-out infinite;
+}
+
+.cc-empty-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  border-radius: 24px;
+
+  background: linear-gradient(145deg, #ffffff, #eef2f6);
+
+  color: var(--empty-primary);
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.cc-empty-icon svg {
+  width: 36%;
+  height: 36%;
+
+  stroke-width: 1.7;
+}
+
+/* =========================================================
+   ICON VARIANTS
+========================================================= */
+
+.cc-empty-icon-soft .cc-empty-icon {
+  background: rgba(241, 245, 249, 0.9);
+}
+
+.cc-empty-icon-solid .cc-empty-icon {
+  background: var(--empty-primary);
+
+  color: #ffffff;
+
+  border-color: var(--empty-primary);
+}
+
+.cc-empty-icon-outline .cc-empty-icon {
+  background: transparent;
+
+  border: 1.5px solid rgba(51, 65, 85, 0.35);
+}
+
+.cc-empty-icon-glass .cc-empty-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.cc-empty-icon-premium .cc-empty-icon {
+  background: linear-gradient(145deg, #ffffff, #e2e8f0);
+
+  box-shadow:
+    0 22px 50px rgba(15, 23, 42, 0.14),
+    inset 0 1px 0 #ffffff;
+}
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.cc-empty-icon-orbit {
+  position: absolute;
+
+  z-index: 1;
+
+  border: 1px solid rgba(100, 116, 139, 0.13);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 135%;
+  height: 135%;
+
+  animation: cc-empty-orbit 12s linear infinite;
+}
+
+.orbit-two {
+  width: 165%;
+  height: 165%;
+
+  border-style: dashed;
+
+  opacity: 0.5;
+
+  animation: cc-empty-orbit-reverse 18s linear infinite;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cc-empty-eyebrow {
+  margin-bottom: 12px;
+
+  color: var(--empty-secondary);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.14em;
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.cc-empty-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 14px;
+
+  padding: 6px 11px;
+
+  border: 1px solid rgba(148, 163, 184, 0.22);
+
+  border-radius: 999px;
+
+  background: rgba(241, 245, 249, 0.8);
+
+  color: #475569;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.03em;
+
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.05);
+}
+
+.cc-empty-badge span {
+  display: flex;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cc-empty-content {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.cc-empty-title {
+  margin: 0;
+
+  color: var(--empty-text);
+
+  font-size: 24px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.035em;
+}
+
+.cc-empty-description {
+  max-width: 510px;
+
+  margin: 11px auto 0;
+
+  color: var(--empty-muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.cc-empty-meta {
+  margin-top: 13px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.cc-empty-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.cc-empty-action {
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 17px;
+
+  border-radius: 12px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.cc-empty-action svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cc-empty-action:hover {
+  transform: translateY(-2px);
+}
+
+.cc-empty-action:active {
+  transform: translateY(0);
+}
+
+.cc-empty-action:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+
+  transform: none;
+}
+
+/* PRIMARY */
+
+.cc-empty-action-primary {
+  border: 1px solid var(--empty-primary);
+
+  background: var(--empty-primary);
+
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(51, 65, 85, 0.17);
+}
+
+.cc-empty-action-primary:hover {
+  background: var(--empty-primary-dark);
+
+  box-shadow: 0 12px 25px rgba(51, 65, 85, 0.22);
+}
+
+/* SECONDARY */
+
+.cc-empty-action-secondary {
+  border: 1px solid rgba(148, 163, 184, 0.3);
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #475569;
+}
+
+.cc-empty-action-secondary:hover {
+  background: #f8fafc;
+}
+
+/* REFRESH */
+
+.cc-empty-refresh {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  min-height: 40px;
+
+  padding: 0 10px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #64748b;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.cc-empty-refresh:hover {
+  color: #1e293b;
+}
+
+.cc-empty-refresh svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* =========================================================
+   BUTTON LOADER
+========================================================= */
+
+.cc-empty-button-loader {
+  width: 14px;
+  height: 14px;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: cc-empty-spin 0.7s linear infinite;
+}
+
+/* =========================================================
+   CUSTOM CONTENT
+========================================================= */
+
+.cc-empty-custom {
+  width: 100%;
+
+  margin-top: 24px;
+}
+
+/* =========================================================
+   VARIANT: DEFAULT
+========================================================= */
+
+.cc-empty-default {
+  background: transparent;
+}
+
+/* =========================================================
+   VARIANT: MINIMAL
+========================================================= */
+
+.cc-empty-minimal {
+  padding: 28px 20px;
+}
+
+.cc-empty-minimal .cc-empty-icon-wrap {
+  --empty-icon-size: 58px;
+
+  margin-bottom: 17px;
+}
+
+.cc-empty-minimal .cc-empty-icon {
+  border-radius: 18px;
+
+  box-shadow: none;
+
+  background: #f8fafc;
+}
+
+.cc-empty-minimal .cc-empty-title {
+  font-size: 18px;
+}
+
+.cc-empty-minimal .cc-empty-description {
+  font-size: 12px;
+}
+
+/* =========================================================
+   VARIANT: GLASS
+========================================================= */
+
+.cc-empty-glass {
+  margin: 10px 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  border-radius: 28px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.38)
+  );
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.cc-empty-glass::before {
+  background: radial-gradient(
+    circle,
+    rgba(100, 116, 139, 0.09),
+    transparent 68%
+  );
+}
+
+/* =========================================================
+   VARIANT: PREMIUM
+========================================================= */
+
+.cc-empty-premium {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+
+  border-radius: 28px;
+
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 #ffffff;
+}
+
+.cc-empty-premium .cc-empty-title {
+  font-size: 27px;
+}
+
+.cc-empty-premium .cc-empty-icon {
+  border-radius: 25px;
+}
+
+/* =========================================================
+   VARIANT: ERROR
+========================================================= */
+
+.cc-empty-error {
+  --empty-primary: #b91c1c;
+  --empty-primary-dark: #991b1b;
+}
+
+.cc-empty-error .cc-empty-icon {
+  color: #b91c1c;
+
+  background: #fef2f2;
+
+  border-color: rgba(185, 28, 28, 0.15);
+}
+
+.cc-empty-error .cc-empty-icon-glow {
+  background: radial-gradient(circle, rgba(185, 28, 28, 0.09), transparent 68%);
+}
+
+/* =========================================================
+   VARIANT: OFFLINE
+========================================================= */
+
+.cc-empty-offline .cc-empty-icon {
+  color: #475569;
+
+  background: #f1f5f9;
+}
+
+/* =========================================================
+   VARIANT: RESTRICTED
+========================================================= */
+
+.cc-empty-restricted {
+  --empty-primary: #475569;
+}
+
+.cc-empty-restricted .cc-empty-icon {
+  border-radius: 50%;
+
+  background: #f1f5f9;
+}
+
+/* =========================================================
+   BORDERS / ELEVATION
+========================================================= */
+
+.cc-empty-bordered {
+  border: 1px solid var(--empty-border);
+
+  border-radius: 24px;
+}
+
+.cc-empty-elevated {
+  border: 1px solid rgba(148, 163, 184, 0.14);
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================
+   ALIGNMENT
+========================================================= */
+
+.cc-empty-align-left {
+  justify-content: flex-start;
+
+  text-align: left;
+}
+
+.cc-empty-align-left .cc-empty-inner {
+  align-items: flex-start;
+}
+
+.cc-empty-align-left .cc-empty-content {
+  align-items: flex-start;
+}
+
+.cc-empty-align-left .cc-empty-description {
+  margin-left: 0;
+}
+
+.cc-empty-align-left .cc-empty-actions {
+  justify-content: flex-start;
+}
+
+/* =========================================================
+   COMPACT
+========================================================= */
+
+.cc-empty-compact {
+  padding: 28px 20px;
+}
+
+.cc-empty-compact .cc-empty-icon-wrap {
+  --empty-icon-size: 54px;
+
+  margin-bottom: 16px;
+}
+
+.cc-empty-compact .cc-empty-title {
+  font-size: 18px;
+}
+
+.cc-empty-compact .cc-empty-description {
+  font-size: 12px;
+
+  margin-top: 7px;
+}
+
+.cc-empty-compact .cc-empty-actions {
+  margin-top: 17px;
+}
+
+/* =========================================================
+   SIZES
+========================================================= */
+
+.cc-empty-xs {
+  padding: 20px 16px;
+}
+
+.cc-empty-xs .cc-empty-icon-wrap {
+  --empty-icon-size: 42px;
+
+  margin-bottom: 12px;
+}
+
+.cc-empty-xs .cc-empty-title {
+  font-size: 15px;
+}
+
+.cc-empty-xs .cc-empty-description {
+  font-size: 11px;
+
+  margin-top: 6px;
+}
+
+.cc-empty-xs .cc-empty-actions {
+  margin-top: 13px;
+}
+
+.cc-empty-sm {
+  padding: 30px 20px;
+}
+
+.cc-empty-sm .cc-empty-icon-wrap {
+  --empty-icon-size: 54px;
+
+  margin-bottom: 17px;
+}
+
+.cc-empty-sm .cc-empty-title {
+  font-size: 18px;
+}
+
+.cc-empty-sm .cc-empty-description {
+  font-size: 12px;
+}
+
+.cc-empty-lg {
+  padding: 65px 30px;
+}
+
+.cc-empty-lg .cc-empty-icon-wrap {
+  --empty-icon-size: 88px;
+
+  margin-bottom: 28px;
+}
+
+.cc-empty-lg .cc-empty-title {
+  font-size: 29px;
+}
+
+.cc-empty-lg .cc-empty-description {
+  font-size: 15px;
+
+  max-width: 560px;
+}
+
+.cc-empty-xl {
+  padding: 90px 30px;
+}
+
+.cc-empty-xl .cc-empty-icon-wrap {
+  --empty-icon-size: 110px;
+
+  margin-bottom: 32px;
+}
+
+.cc-empty-xl .cc-empty-title {
+  font-size: 34px;
+}
+
+.cc-empty-xl .cc-empty-description {
+  font-size: 16px;
+
+  max-width: 600px;
+}
+
+/* =========================================================
+   REFRESH ANIMATION
+========================================================= */
+
+.cc-empty-refresh-spin {
+  animation: cc-empty-spin 0.8s linear infinite;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cc-empty-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cc-empty-glow {
+  0%,
+  100% {
+    transform: scale(0.95);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.08);
+
+    opacity: 1;
+  }
+}
+
+@keyframes cc-empty-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cc-empty-orbit-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .cc-empty-state {
+    padding: 38px 18px;
+  }
+
+  .cc-empty-title {
+    font-size: 21px;
+  }
+
+  .cc-empty-description {
+    font-size: 13px;
+  }
+
+  .cc-empty-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .cc-empty-action {
+    width: 100%;
+  }
+
+  .cc-empty-refresh {
+    justify-content: center;
+  }
+
+  .cc-empty-xl .cc-empty-title {
+    font-size: 27px;
+  }
+
+  .cc-empty-lg .cc-empty-title {
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-empty-icon-glow,
+  .cc-empty-icon-orbit,
+  .cc-empty-button-loader,
+  .cc-empty-refresh-spin {
+    animation: none;
+  }
+
+  .cc-empty-action {
+    transition: none;
+  }
+}

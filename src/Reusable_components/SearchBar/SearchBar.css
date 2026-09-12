@@ -1,0 +1,861 @@
+.searchbar {
+  --searchbar-primary: #2563eb;
+  --searchbar-primary-soft: #eaf1ff;
+  --searchbar-border: #dce5ef;
+  --searchbar-track: #f5f8fb;
+  --searchbar-text: #172b4d;
+  --searchbar-muted: #718096;
+  --searchbar-height: 46px;
+
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: column;
+
+  font-family: inherit;
+
+  color: var(--searchbar-text);
+}
+
+.searchbar-full-width {
+  width: 100%;
+}
+
+/* =========================================
+   MAIN
+========================================= */
+
+.searchbar-main {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: var(--searchbar-height);
+
+  border: 1px solid transparent;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* =========================================
+   SHAPES
+========================================= */
+
+.searchbar-pill .searchbar-main {
+  border-radius: 999px;
+}
+
+.searchbar-rounded .searchbar-main {
+  border-radius: 13px;
+}
+
+.searchbar-square .searchbar-main {
+  border-radius: 4px;
+}
+
+/* =========================================
+   SIZES
+========================================= */
+
+.searchbar-xs {
+  --searchbar-height: 34px;
+}
+
+.searchbar-sm {
+  --searchbar-height: 40px;
+}
+
+.searchbar-md {
+  --searchbar-height: 46px;
+}
+
+.searchbar-lg {
+  --searchbar-height: 54px;
+}
+
+.searchbar-xl {
+  --searchbar-height: 64px;
+}
+
+/* =========================================
+   INPUT
+========================================= */
+
+.searchbar-main input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--searchbar-text);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.searchbar-main input::placeholder {
+  color: #9aa8b7;
+
+  font-weight: 500;
+}
+
+.searchbar-main input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* =========================================
+   ICON
+========================================= */
+
+.searchbar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 100%;
+
+  flex-shrink: 0;
+
+  color: #7b8ca1;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.searchbar-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.searchbar-focused .searchbar-icon {
+  color: var(--searchbar-primary);
+
+  transform: scale(1.05);
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.searchbar-spinner {
+  animation: searchbar-spin 0.8s linear infinite;
+}
+
+@keyframes searchbar-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   CLEAR
+========================================= */
+
+.searchbar-clear,
+.searchbar-filter,
+.searchbar-action,
+.searchbar-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #718096;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.searchbar-clear {
+  width: 32px;
+  height: 32px;
+
+  margin-right: 3px;
+
+  border-radius: 50%;
+}
+
+.searchbar-clear:hover {
+  background: #edf2f7;
+
+  color: #334155;
+
+  transform: rotate(90deg);
+}
+
+.searchbar-clear svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* =========================================
+   SHORTCUT
+========================================= */
+
+.searchbar-shortcut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 27px;
+  height: 22px;
+
+  margin-right: 9px;
+
+  padding: 0 6px;
+
+  border: 1px solid #dce4ec;
+  border-bottom-width: 2px;
+
+  border-radius: 6px;
+
+  background: #f8fafc;
+
+  color: #8492a4;
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   PREFIX / SUFFIX
+========================================= */
+
+.searchbar-prefix,
+.searchbar-suffix {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  color: var(--searchbar-muted);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.searchbar-prefix {
+  margin-left: 12px;
+}
+
+.searchbar-suffix {
+  margin-right: 10px;
+}
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.searchbar-category {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 5px;
+
+  border-right: 1px solid #e5ebf1;
+}
+
+.searchbar-category select {
+  height: 80%;
+
+  padding: 0 30px 0 10px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #52677d;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   FILTER
+========================================= */
+
+.searchbar-filter {
+  height: 70%;
+
+  gap: 6px;
+
+  margin-right: 5px;
+
+  padding: 0 10px;
+
+  border-left: 1px solid #e6ecf2;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.searchbar-filter:hover {
+  color: var(--searchbar-primary);
+
+  background: var(--searchbar-primary-soft);
+}
+
+.searchbar-filter svg {
+  width: 14px;
+  height: 14px;
+}
+
+.searchbar-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 17px;
+  height: 17px;
+
+  padding: 0 5px;
+
+  border-radius: 999px;
+
+  background: var(--searchbar-primary);
+
+  color: white;
+
+  font-size: 8px;
+}
+
+/* =========================================
+   ACTION
+========================================= */
+
+.searchbar-action {
+  width: 38px;
+  height: 70%;
+
+  margin-right: 4px;
+
+  border-left: 1px solid #e6ecf2;
+}
+
+.searchbar-action:hover {
+  color: var(--searchbar-primary);
+}
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.searchbar-submit {
+  width: 36px;
+  height: 70%;
+
+  margin-right: 5px;
+
+  border-radius: 999px;
+
+  background: var(--searchbar-primary);
+
+  color: white;
+}
+
+.searchbar-submit:hover:not(:disabled) {
+  transform: translateX(1px);
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.25);
+}
+
+.searchbar-submit:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+.searchbar-submit svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* =========================================
+   DEFAULT APPEARANCE
+========================================= */
+
+.searchbar-default .searchbar-main {
+  border-color: #dfe7ef;
+
+  background: #ffffff;
+}
+
+/* =========================================
+   SOFT
+========================================= */
+
+.searchbar-soft .searchbar-main {
+  border-color: transparent;
+
+  background: #f4f7fa;
+}
+
+/* =========================================
+   OUTLINE
+========================================= */
+
+.searchbar-outline .searchbar-main {
+  border-color: var(--searchbar-border);
+
+  background: transparent;
+}
+
+/* =========================================
+   SOLID
+========================================= */
+
+.searchbar-solid .searchbar-main {
+  border-color: var(--searchbar-primary);
+
+  background: #ffffff;
+}
+
+/* =========================================
+   GHOST
+========================================= */
+
+.searchbar-ghost .searchbar-main {
+  border-color: transparent;
+
+  background: transparent;
+}
+
+/* =========================================
+   GLASS
+========================================= */
+
+.searchbar-glass .searchbar-main {
+  border-color: rgba(255, 255, 255, 0.3);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.28),
+    rgba(255, 255, 255, 0.08)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+.searchbar-glass input {
+  color: #ffffff;
+}
+
+.searchbar-glass input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.searchbar-glass .searchbar-icon,
+.searchbar-glass .searchbar-clear {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
+   GRADIENT
+========================================= */
+
+.searchbar-gradient .searchbar-main {
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(110deg, #2563eb, #7c3aed, #06b6d4) border-box;
+}
+
+/* =========================================
+   FOCUS
+========================================= */
+
+.searchbar-focused .searchbar-main {
+  border-color: color-mix(in srgb, var(--searchbar-primary) 55%, white);
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.searchbar-open .searchbar-main {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* =========================================
+   SHADOW
+========================================= */
+
+.searchbar-shadow .searchbar-main {
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================
+   GLOW
+========================================= */
+
+.searchbar-glow .searchbar-main {
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================================
+   BORDERED
+========================================= */
+
+.searchbar-bordered .searchbar-main {
+  border-color: var(--searchbar-border);
+}
+
+/* =========================================
+   DROPDOWN
+========================================= */
+
+.searchbar-dropdown {
+  position: absolute;
+
+  z-index: 100;
+
+  top: calc(var(--searchbar-height) + 7px);
+
+  left: 0;
+  right: 0;
+
+  overflow: hidden;
+
+  padding: 7px;
+
+  border: 1px solid #e1e8ef;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  animation: searchbar-dropdown-in 0.18s ease;
+}
+
+@keyframes searchbar-dropdown-in {
+  from {
+    opacity: 0;
+
+    transform: translateY(-5px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.searchbar-section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.searchbar-section + .searchbar-section {
+  margin-top: 7px;
+
+  padding-top: 7px;
+
+  border-top: 1px solid #edf1f5;
+}
+
+.searchbar-section-title {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 9px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+}
+
+.searchbar-section-title svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* =========================================
+   OPTION
+========================================= */
+
+.searchbar-option {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  min-height: 39px;
+
+  gap: 9px;
+
+  padding: 8px 10px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #52677d;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.searchbar-option svg {
+  width: 14px;
+  height: 14px;
+
+  flex-shrink: 0;
+
+  color: #94a3b8;
+}
+
+.searchbar-option:hover,
+.searchbar-option-active {
+  background: #f1f6ff;
+
+  color: var(--searchbar-primary);
+}
+
+.searchbar-option:hover {
+  transform: translateX(2px);
+}
+
+.searchbar-option-active svg,
+.searchbar-option:hover svg {
+  color: var(--searchbar-primary);
+}
+
+.searchbar-option span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   HIGHLIGHT
+========================================= */
+
+.searchbar-option mark {
+  padding: 1px 2px;
+
+  border-radius: 3px;
+
+  background: #dbeafe;
+
+  color: var(--searchbar-primary);
+
+  font-weight: 800;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.searchbar-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 75px;
+
+  color: #718096;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.searchbar-loading svg {
+  width: 15px;
+  height: 15px;
+
+  animation: searchbar-spin 0.8s linear infinite;
+}
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.searchbar-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 115px;
+
+  padding: 20px;
+
+  color: #8492a4;
+
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.searchbar-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 11px;
+
+  background: #f1f5f9;
+
+  color: #94a3b8;
+}
+
+.searchbar-empty-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* =========================================
+   RESULT COUNT
+========================================= */
+
+.searchbar-result-count {
+  margin-top: 7px;
+
+  color: #8492a4;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================================
+   DISABLED
+========================================= */
+
+.searchbar-disabled {
+  opacity: 0.55;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+.searchbar-animated .searchbar-main {
+  will-change: box-shadow, border-color, transform;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+  .searchbar-xl {
+    --searchbar-height: 56px;
+  }
+
+  .searchbar-category select {
+    max-width: 100px;
+  }
+
+  .searchbar-filter span {
+    display: none;
+  }
+
+  .searchbar-filter {
+    padding: 0 9px;
+  }
+
+  .searchbar-submit {
+    width: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchbar-main input {
+    font-size: 12px;
+  }
+
+  .searchbar-shortcut {
+    display: none;
+  }
+
+  .searchbar-category {
+    display: none;
+  }
+
+  .searchbar-dropdown {
+    border-radius: 12px;
+  }
+}

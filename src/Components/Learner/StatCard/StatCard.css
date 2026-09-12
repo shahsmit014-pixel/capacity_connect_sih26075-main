@@ -1,0 +1,520 @@
+/* =========================================================
+   CAPACITY CONNECT
+   LEARNER STAT CARD
+
+   Design:
+   - Premium LMS dashboard
+   - Ocean / Navy theme
+   - Clean glass effect
+   - No gradients
+   - No excessive decoration
+   - Fully responsive
+========================================================= */
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.stat-card {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 168px;
+
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid #dbe8ee;
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 24px rgba(18, 55, 74, 0.06),
+    0 2px 6px rgba(18, 55, 74, 0.03);
+
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.stat-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #c5dfe8;
+
+  box-shadow:
+    0 14px 32px rgba(18, 55, 74, 0.09),
+    0 4px 10px rgba(18, 55, 74, 0.04);
+}
+
+/* =========================================================
+   CLICKABLE CARD
+========================================================= */
+
+.stat-card--clickable {
+  cursor: pointer;
+}
+
+.stat-card--clickable:focus-visible {
+  outline: 3px solid rgba(17, 166, 191, 0.22);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   TOP ROW
+========================================================= */
+
+.stat-card__top {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+/* =========================================================
+   ICON CONTAINER
+========================================================= */
+
+.stat-card__icon {
+  width: 46px;
+  height: 46px;
+
+  flex: 0 0 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #e8f7fa;
+  border: 1px solid #d0edf1;
+
+  color: #087f96;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.stat-card:hover .stat-card__icon {
+  transform: translateY(-1px);
+
+  background: #def3f7;
+}
+
+.stat-card__icon svg {
+  width: 21px;
+  height: 21px;
+
+  stroke-width: 1.8;
+}
+
+/* =========================================================
+   TREND
+========================================================= */
+
+.stat-card__trend {
+  min-height: 26px;
+
+  padding: 5px 9px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
+}
+
+.stat-card__trend svg {
+  width: 12px;
+  height: 12px;
+
+  stroke-width: 2.2;
+}
+
+/* =========================================================
+   POSITIVE TREND
+========================================================= */
+
+.stat-card__trend--positive {
+  color: #187653;
+
+  background: #eaf8f1;
+  border: 1px solid #d4efdf;
+}
+
+/* =========================================================
+   NEGATIVE TREND
+========================================================= */
+
+.stat-card__trend--negative {
+  color: #b44a4a;
+
+  background: #fff0f0;
+  border: 1px solid #f5d8d8;
+}
+
+/* =========================================================
+   NEUTRAL TREND
+========================================================= */
+
+.stat-card__trend--neutral {
+  color: #5c6b78;
+
+  background: #f1f5f7;
+  border: 1px solid #e0e7eb;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.stat-card__content {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 18px;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.stat-card__title {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #657583;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.055em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   VALUE ROW
+========================================================= */
+
+.stat-card__value-row {
+  display: flex;
+  align-items: baseline;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   VALUE
+========================================================= */
+
+.stat-card__value {
+  display: block;
+
+  color: #17384a;
+
+  font-size: 30px;
+  font-weight: 750;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.035em;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.stat-card__description {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #83919b;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: 1.45;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   DECORATIVE CIRCLES
+
+   Very subtle. They create depth without using
+   gradients or bubble effects.
+========================================================= */
+
+.stat-card__decorative-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(20, 137, 158, 0.08);
+}
+
+/* First circle */
+
+.stat-card__decorative-circle--one {
+  width: 92px;
+  height: 92px;
+
+  right: -42px;
+  bottom: -42px;
+
+  background: rgba(227, 246, 249, 0.45);
+}
+
+/* Second circle */
+
+.stat-card__decorative-circle--two {
+  width: 54px;
+  height: 54px;
+
+  right: 17px;
+  bottom: 12px;
+
+  background: rgba(238, 249, 251, 0.45);
+}
+
+/* =========================================================
+   VARIANT — OCEAN
+========================================================= */
+
+.stat-card--ocean .stat-card__icon {
+  color: #087f96;
+  background: #e8f7fa;
+  border-color: #d0edf1;
+}
+
+/* =========================================================
+   VARIANT — NAVY
+========================================================= */
+
+.stat-card--navy .stat-card__icon {
+  color: #315a70;
+  background: #edf3f6;
+  border-color: #dce7ec;
+}
+
+/* =========================================================
+   VARIANT — SUCCESS
+========================================================= */
+
+.stat-card--success .stat-card__icon {
+  color: #217b59;
+  background: #eaf8f1;
+  border-color: #d5eee1;
+}
+
+/* =========================================================
+   VARIANT — ACHIEVEMENT
+========================================================= */
+
+.stat-card--achievement .stat-card__icon {
+  color: #876c2f;
+  background: #fbf5e7;
+  border-color: #eee2c5;
+}
+
+/* =========================================================
+   VARIANT — TARGET
+========================================================= */
+
+.stat-card--target .stat-card__icon {
+  color: #596aa0;
+  background: #eef1fb;
+  border-color: #dde3f4;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .stat-card {
+    min-height: 160px;
+
+    padding: 19px;
+  }
+
+  .stat-card__icon {
+    width: 43px;
+    height: 43px;
+
+    flex-basis: 43px;
+  }
+
+  .stat-card__value {
+    font-size: 27px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .stat-card {
+    min-height: 150px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+  .stat-card__icon {
+    width: 41px;
+    height: 41px;
+
+    flex-basis: 41px;
+
+    border-radius: 12px;
+  }
+
+  .stat-card__icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .stat-card__title {
+    font-size: 11px;
+  }
+
+  .stat-card__value {
+    font-size: 25px;
+  }
+
+  .stat-card__description {
+    font-size: 11px;
+  }
+
+  .stat-card__trend {
+    padding: 5px 7px;
+
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .stat-card {
+    min-height: 145px;
+
+    padding: 16px;
+  }
+
+  .stat-card__top {
+    gap: 8px;
+  }
+
+  .stat-card__icon {
+    width: 39px;
+    height: 39px;
+
+    flex-basis: 39px;
+  }
+
+  .stat-card__value {
+    font-size: 24px;
+  }
+
+  .stat-card__content {
+    margin-top: 15px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+  .stat-card {
+    min-height: 140px;
+
+    padding: 15px;
+  }
+
+  .stat-card__value {
+    font-size: 22px;
+  }
+
+  .stat-card__description {
+    max-width: 150px;
+  }
+
+  .stat-card__trend {
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .stat-card__icon {
+    transition: none;
+  }
+
+  .stat-card:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,1346 @@
+/* =========================================================
+   CAPACITY CONNECT
+   LEARNING PROGRESS
+
+   Responsive strategy:
+   - Large desktop: overview + activity side-by-side
+   - Medium desktop/tablet: stacked sections
+   - Mobile: fully single-column
+========================================================= */
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.learning-progress {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid #dce9ee;
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 26px rgba(20, 55, 72, 0.055),
+    0 2px 7px rgba(20, 55, 72, 0.025);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.learning-progress__header {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #edf2f4;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.learning-progress__heading {
+  min-width: 0;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.learning-progress__eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #758994;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.learning-progress__title {
+  margin: 0;
+
+  color: #17384a;
+
+  font-size: 22px;
+  font-weight: 750;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.025em;
+}
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.learning-progress__subtitle {
+  margin: 5px 0 0;
+
+  color: #7b8b95;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PERIOD
+========================================================= */
+
+.learning-progress__period {
+  flex-shrink: 0;
+
+  min-height: 34px;
+
+  padding: 7px 11px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #526a77;
+
+  background: #f5f9fa;
+
+  border: 1px solid #e1ebef;
+  border-radius: 9px;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  box-sizing: border-box;
+}
+
+.learning-progress__period svg {
+  width: 14px;
+  height: 14px;
+
+  color: #148ca3;
+
+  stroke-width: 2;
+}
+
+.learning-progress__period-dot {
+  width: 5px;
+  height: 5px;
+
+  flex: 0 0 5px;
+
+  border-radius: 50%;
+
+  background: #4cae7c;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.learning-progress__body {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.55fr)
+    minmax(280px, 0.85fr);
+
+  gap: 26px;
+
+  padding-top: 24px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.learning-progress__overview {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns: 178px minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 24px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CIRCULAR PROGRESS
+========================================================= */
+
+.learning-progress__circle-wrap {
+  --progress: 68%;
+
+  width: 172px;
+  height: 172px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: conic-gradient(
+    #36a66f 0 var(--progress),
+    #e8edf0 var(--progress) 100%
+  );
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CIRCLE INNER
+========================================================= */
+
+.learning-progress__circle {
+  width: 134px;
+  height: 134px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow: inset 0 0 0 1px rgba(218, 231, 235, 0.7);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CIRCLE CONTENT
+========================================================= */
+
+.learning-progress__circle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* =========================================================
+   CIRCLE VALUE
+========================================================= */
+
+.learning-progress__circle-value {
+  color: #17384a;
+
+  font-size: 29px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+/* =========================================================
+   CIRCLE LABEL
+========================================================= */
+
+.learning-progress__circle-label {
+  max-width: 90px;
+
+  margin-top: 7px;
+
+  color: #778994;
+
+  font-size: 9px;
+  font-weight: 650;
+
+  line-height: 1.35;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.045em;
+}
+
+/* =========================================================
+   LOW PROGRESS
+========================================================= */
+
+.learning-progress__circle-wrap--low {
+  background: conic-gradient(
+    #e35d6a 0 var(--progress),
+    #f0e5e7 var(--progress) 100%
+  );
+}
+
+.learning-progress__circle-wrap--low .learning-progress__circle-value {
+  color: #c94b58;
+}
+
+/* =========================================================
+   MEDIUM PROGRESS
+========================================================= */
+
+.learning-progress__circle-wrap--medium {
+  background: conic-gradient(
+    #e3a33b 0 var(--progress),
+    #eee9de var(--progress) 100%
+  );
+}
+
+.learning-progress__circle-wrap--medium .learning-progress__circle-value {
+  color: #b67b1d;
+}
+
+/* =========================================================
+   HIGH PROGRESS
+========================================================= */
+
+.learning-progress__circle-wrap--high {
+  background: conic-gradient(
+    #36a66f 0 var(--progress),
+    #e2ece7 var(--progress) 100%
+  );
+}
+
+.learning-progress__circle-wrap--high .learning-progress__circle-value {
+  color: #258158;
+}
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.learning-progress__details {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MINI STATS
+========================================================= */
+
+.learning-progress__mini-stats {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 9px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MINI STAT
+========================================================= */
+
+.learning-progress__mini-stat {
+  min-width: 0;
+  min-height: 70px;
+
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border-radius: 11px;
+
+  border: 1px solid #e5ecef;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.learning-progress__mini-stat:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 14px rgba(25, 59, 76, 0.06);
+}
+
+/* =========================================================
+   MINI ICON
+========================================================= */
+
+.learning-progress__mini-icon {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+}
+
+.learning-progress__mini-icon svg {
+  width: 14px;
+  height: 14px;
+
+  stroke-width: 2;
+}
+
+/* =========================================================
+   MINI CONTENT
+========================================================= */
+
+.learning-progress__mini-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.learning-progress__mini-content strong {
+  color: #243f4e;
+
+  font-size: 17px;
+  font-weight: 750;
+
+  line-height: 1.15;
+}
+
+.learning-progress__mini-content span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #81909a;
+
+  font-size: 8px;
+  font-weight: 650;
+
+  line-height: 1.3;
+
+  white-space: normal;
+
+  overflow-wrap: break-word;
+}
+
+/* =========================================================
+   MINI STAT COLORS
+========================================================= */
+
+.learning-progress__mini-stat--ocean {
+  background: #f0f9fb;
+  border-color: #d9edf1;
+}
+
+.learning-progress__mini-stat--ocean .learning-progress__mini-icon {
+  color: #13869b;
+  background: #dff2f5;
+}
+
+.learning-progress__mini-stat--success {
+  background: #f1faf5;
+  border-color: #dcefe4;
+}
+
+.learning-progress__mini-stat--success .learning-progress__mini-icon {
+  color: #2c8a61;
+  background: #def1e7;
+}
+
+.learning-progress__mini-stat--violet {
+  background: #f6f3fc;
+  border-color: #e8e1f5;
+}
+
+.learning-progress__mini-stat--violet .learning-progress__mini-icon {
+  color: #7864b4;
+  background: #eae4f7;
+}
+
+.learning-progress__mini-stat--neutral {
+  background: #f6f8f9;
+  border-color: #e6ebed;
+}
+
+.learning-progress__mini-stat--neutral .learning-progress__mini-icon {
+  color: #6f7d85;
+  background: #e9edef;
+}
+
+/* =========================================================
+   HORIZONTAL PROGRESS
+========================================================= */
+
+.learning-progress__bar-section {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================================
+   BAR HEADER
+========================================================= */
+
+.learning-progress__bar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 8px;
+
+  color: #687c87;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.learning-progress__bar-header strong {
+  color: #385363;
+
+  font-weight: 700;
+
+  text-align: right;
+}
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.learning-progress__bar {
+  width: 100%;
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e8edef;
+}
+
+/* =========================================================
+   PROGRESS FILL
+========================================================= */
+
+.learning-progress__bar-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  transition: width 500ms ease;
+}
+
+/* LOW */
+
+.learning-progress__bar-fill--low {
+  background: linear-gradient(90deg, #e35d6a, #ef8b72);
+}
+
+/* MEDIUM */
+
+.learning-progress__bar-fill--medium {
+  background: linear-gradient(90deg, #e3a33b, #e8c15a);
+}
+
+/* HIGH */
+
+.learning-progress__bar-fill--high {
+  background: linear-gradient(90deg, #2f9d69, #5fbd87);
+}
+
+/* =========================================================
+   BAR FOOTER
+========================================================= */
+
+.learning-progress__bar-footer {
+  margin-top: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  color: #87949b;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  line-height: 1.4;
+}
+
+.learning-progress__bar-footer strong {
+  color: #41606f;
+
+  font-weight: 750;
+}
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.learning-progress__activity {
+  width: 100%;
+  min-width: 0;
+
+  padding-left: 26px;
+
+  border-left: 1px solid #edf1f3;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   ACTIVITY HEADER
+========================================================= */
+
+.learning-progress__activity-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+.learning-progress__activity-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #7c8c95;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.08em;
+}
+
+.learning-progress__activity-header h3 {
+  margin: 0;
+
+  color: #294554;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   ACTIVITY TOTAL
+========================================================= */
+
+.learning-progress__activity-total {
+  padding: 5px 8px;
+
+  color: #257b61;
+
+  background: #edf8f3;
+
+  border: 1px solid #d8eee4;
+  border-radius: 7px;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.learning-progress__chart {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns: 25px minmax(0, 1fr);
+
+  gap: 8px;
+}
+
+/* =========================================================
+   Y AXIS
+========================================================= */
+
+.learning-progress__y-axis {
+  height: 145px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  box-sizing: border-box;
+
+  color: #98a5ab;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  text-align: right;
+}
+
+/* =========================================================
+   CHART AREA
+========================================================= */
+
+.learning-progress__chart-area {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  height: 145px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.learning-progress__chart-grid {
+  position: absolute;
+
+  inset: 0 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  pointer-events: none;
+}
+
+.learning-progress__chart-grid span {
+  width: 100%;
+  height: 1px;
+
+  border-top: 1px dashed #e7edef;
+}
+
+/* =========================================================
+   BARS
+========================================================= */
+
+.learning-progress__bars {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+
+  align-items: stretch;
+
+  gap: 7px;
+}
+
+/* =========================================================
+   BAR COLUMN
+========================================================= */
+
+.learning-progress__bar-column {
+  position: relative;
+
+  min-width: 0;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   BAR VALUE
+========================================================= */
+
+.learning-progress__bar-value {
+  position: absolute;
+
+  top: 0;
+
+  width: 100%;
+
+  color: #82929a;
+
+  font-size: 7px;
+  font-weight: 650;
+
+  text-align: center;
+
+  opacity: 0;
+
+  transition: opacity 180ms ease;
+}
+
+.learning-progress__bar-column:hover .learning-progress__bar-value {
+  opacity: 1;
+}
+
+/* =========================================================
+   BAR TRACK
+========================================================= */
+
+.learning-progress__bar-track {
+  width: 100%;
+  max-width: 19px;
+
+  height: 112px;
+
+  display: flex;
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  border-radius: 7px 7px 3px 3px;
+
+  background: #f1f4f5;
+}
+
+/* =========================================================
+   ACTIVITY BAR
+========================================================= */
+
+.learning-progress__activity-bar {
+  width: 100%;
+
+  min-height: 4px;
+
+  border-radius: 7px 7px 3px 3px;
+
+  transition:
+    height 350ms ease,
+    filter 180ms ease;
+}
+
+.learning-progress__bar-column:hover .learning-progress__activity-bar {
+  filter: brightness(0.94);
+}
+
+/* =========================================================
+   ACTIVITY BAR COLORS
+========================================================= */
+
+.learning-progress__activity-bar--ocean {
+  background: linear-gradient(180deg, #52b7c8, #16899f);
+}
+
+.learning-progress__activity-bar--violet {
+  background: linear-gradient(180deg, #a28bd2, #7561b0);
+}
+
+.learning-progress__activity-bar--green {
+  background: linear-gradient(180deg, #68bd8d, #329766);
+}
+
+.learning-progress__activity-bar--orange {
+  background: linear-gradient(180deg, #f1bd64, #dc9634);
+}
+
+.learning-progress__activity-bar--cyan {
+  background: linear-gradient(180deg, #61c3d1, #269caf);
+}
+
+.learning-progress__activity-bar--coral {
+  background: linear-gradient(180deg, #ed8c82, #d96862);
+}
+
+/* =========================================================
+   DAY
+========================================================= */
+
+.learning-progress__day {
+  position: absolute;
+
+  bottom: 0;
+
+  color: #81919a;
+
+  font-size: 8px;
+  font-weight: 650;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   ACTIVITY FOOTER
+========================================================= */
+
+.learning-progress__activity-footer {
+  margin-top: 15px;
+
+  padding-top: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  border-top: 1px solid #edf2f4;
+}
+
+/* =========================================================
+   TIME
+========================================================= */
+
+.learning-progress__time {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.learning-progress__time-icon {
+  width: 29px;
+  height: 29px;
+
+  flex: 0 0 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: #54717e;
+
+  background: #edf4f6;
+}
+
+.learning-progress__time-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.learning-progress__time > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.learning-progress__time span {
+  color: #84939a;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.learning-progress__time strong {
+  margin-top: 2px;
+
+  color: #304d5b;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  line-height: 1.2;
+}
+
+/* =========================================================
+   COMPARISON
+========================================================= */
+
+.learning-progress__comparison {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  color: #7e8f97;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.learning-progress__comparison svg {
+  width: 12px;
+  height: 12px;
+
+  color: #309267;
+
+  stroke-width: 2.3;
+}
+
+.learning-progress__comparison strong {
+  color: #2c8b62;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+/* =========================================================
+   IMPORTANT RESPONSIVE BREAKPOINT
+   MEDIUM DESKTOP
+
+   This is the fix for your screenshot.
+
+   Because the sidebar takes ~260px, the dashboard
+   doesn't have enough room at 1033px to keep
+   Overview + Activity side-by-side.
+========================================================= */
+
+@media (max-width: 1100px) {
+  .learning-progress__body {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+  .learning-progress__activity {
+    padding-left: 0;
+    padding-top: 24px;
+
+    border-left: 0;
+    border-top: 1px solid #edf1f3;
+  }
+
+  .learning-progress__chart {
+    max-width: 650px;
+  }
+}
+
+/* =========================================================
+   LARGE LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+  .learning-progress {
+    padding: 22px;
+  }
+
+  .learning-progress__body {
+    gap: 20px;
+  }
+
+  .learning-progress__overview {
+    grid-template-columns: 155px minmax(0, 1fr);
+
+    gap: 18px;
+  }
+
+  .learning-progress__circle-wrap {
+    width: 150px;
+    height: 150px;
+  }
+
+  .learning-progress__circle {
+    width: 116px;
+    height: 116px;
+  }
+
+  .learning-progress__circle-value {
+    font-size: 26px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 760px) {
+  .learning-progress {
+    padding: 20px;
+  }
+
+  .learning-progress__header {
+    gap: 15px;
+  }
+
+  .learning-progress__title {
+    font-size: 20px;
+  }
+
+  .learning-progress__overview {
+    grid-template-columns: 145px minmax(0, 1fr);
+
+    gap: 16px;
+  }
+
+  .learning-progress__circle-wrap {
+    width: 140px;
+    height: 140px;
+  }
+
+  .learning-progress__circle {
+    width: 108px;
+    height: 108px;
+  }
+
+  .learning-progress__mini-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .learning-progress {
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+  .learning-progress__header {
+    flex-direction: column;
+
+    padding-bottom: 17px;
+  }
+
+  .learning-progress__period {
+    align-self: flex-start;
+  }
+
+  .learning-progress__body {
+    padding-top: 20px;
+  }
+
+  .learning-progress__overview {
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+
+    gap: 20px;
+  }
+
+  .learning-progress__details {
+    width: 100%;
+  }
+
+  .learning-progress__circle-wrap {
+    width: 158px;
+    height: 158px;
+  }
+
+  .learning-progress__circle {
+    width: 122px;
+    height: 122px;
+  }
+
+  .learning-progress__circle-value {
+    font-size: 28px;
+  }
+
+  .learning-progress__mini-stats {
+    width: 100%;
+  }
+
+  .learning-progress__activity {
+    padding-top: 20px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .learning-progress {
+    padding: 16px;
+  }
+
+  .learning-progress__eyebrow {
+    font-size: 9px;
+  }
+
+  .learning-progress__title {
+    font-size: 18px;
+  }
+
+  .learning-progress__subtitle {
+    font-size: 11px;
+  }
+
+  .learning-progress__mini-stat {
+    min-height: 64px;
+
+    padding: 8px;
+  }
+
+  .learning-progress__mini-icon {
+    width: 27px;
+    height: 27px;
+
+    flex-basis: 27px;
+  }
+
+  .learning-progress__mini-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .learning-progress__mini-content strong {
+    font-size: 15px;
+  }
+
+  .learning-progress__mini-content span {
+    font-size: 7px;
+  }
+
+  .learning-progress__bar-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 3px;
+  }
+
+  .learning-progress__bar-header strong {
+    text-align: left;
+  }
+
+  .learning-progress__activity-header h3 {
+    font-size: 13px;
+  }
+
+  .learning-progress__activity-total {
+    font-size: 9px;
+  }
+
+  .learning-progress__activity-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+  .learning-progress {
+    padding: 14px;
+  }
+
+  .learning-progress__circle-wrap {
+    width: 145px;
+    height: 145px;
+  }
+
+  .learning-progress__circle {
+    width: 112px;
+    height: 112px;
+  }
+
+  .learning-progress__circle-value {
+    font-size: 25px;
+  }
+
+  .learning-progress__mini-stats {
+    gap: 6px;
+  }
+
+  .learning-progress__mini-stat {
+    gap: 6px;
+  }
+
+  .learning-progress__mini-content span {
+    white-space: normal;
+  }
+
+  .learning-progress__chart {
+    grid-template-columns: 20px minmax(0, 1fr);
+
+    gap: 5px;
+  }
+
+  .learning-progress__bars {
+    gap: 4px;
+  }
+
+  .learning-progress__bar-track {
+    max-width: 15px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .learning-progress__mini-stat,
+  .learning-progress__activity-bar,
+  .learning-progress__bar-fill {
+    transition: none;
+  }
+
+  .learning-progress__mini-stat:hover {
+    transform: none;
+  }
+}

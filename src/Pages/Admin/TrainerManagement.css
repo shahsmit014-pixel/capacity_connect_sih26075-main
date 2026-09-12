@@ -1,0 +1,56 @@
+/* TrainerManagement.css */
+
+.trainer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trainer-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.trainer-rating-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.star-icon-gold {
+  color: #F59E0B;
+}
+
+.trainer-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.filter-pill-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.filter-pill-btn:hover {
+  border-color: #CBD5E1;
+  color: var(--text-main);
+}
+
+.filter-pill-btn.active {
+  background: #0788C9;
+  border-color: #0788C9;
+  color: #FFFFFF;
+}

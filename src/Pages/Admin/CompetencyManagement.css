@@ -1,0 +1,23 @@
+/* CompetencyManagement.css */
+
+.competency-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.competency-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.domain-pill-tag {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #EFF6FF;
+  color: #1D4ED8;
+}

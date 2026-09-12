@@ -1,0 +1,13 @@
+/* LearnerManagement.css */
+
+.learner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.learner-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}

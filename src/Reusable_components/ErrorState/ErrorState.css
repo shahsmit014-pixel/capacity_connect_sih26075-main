@@ -1,0 +1,1033 @@
+/* =========================================================
+   ROOT
+========================================================= */
+
+.cc-error-state {
+  --error-primary: #334155;
+  --error-primary-dark: #1e293b;
+
+  --error-text: #172033;
+  --error-muted: #64748b;
+
+  --error-surface: #ffffff;
+
+  --error-border: rgba(148, 163, 184, 0.2);
+
+  --error-danger: #b91c1c;
+  --error-warning: #a16207;
+
+  --error-icon-size: 76px;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 50px 28px;
+
+  overflow: hidden;
+
+  color: var(--error-text);
+}
+
+.cc-error-full-width {
+  width: 100%;
+}
+
+/* =========================================================
+   ATMOSPHERE
+========================================================= */
+
+.cc-error-state::before {
+  content: "";
+
+  position: absolute;
+
+  width: 340px;
+  height: 340px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(100, 116, 139, 0.07),
+    transparent 68%
+  );
+
+  pointer-events: none;
+}
+
+.cc-error-state::after {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  top: -70px;
+  right: -40px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(148, 163, 184, 0.07),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.cc-error-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 680px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.cc-error-icon-wrap {
+  --icon-size: var(--error-icon-size);
+
+  position: relative;
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 26px;
+}
+
+.cc-error-icon-glow {
+  position: absolute;
+
+  width: 150%;
+  height: 150%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(100, 116, 139, 0.12),
+    transparent 68%
+  );
+
+  filter: blur(12px);
+
+  animation: cc-error-pulse 4s ease-in-out infinite;
+}
+
+.cc-error-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  border-radius: 25px;
+
+  background: linear-gradient(145deg, #ffffff, #eef2f6);
+
+  color: var(--error-primary);
+
+  box-shadow:
+    0 20px 48px rgba(15, 23, 42, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.cc-error-icon svg {
+  width: 37%;
+  height: 37%;
+
+  stroke-width: 1.65;
+}
+
+/* =========================================================
+   ICON STYLES
+========================================================= */
+
+.cc-error-icon-soft .cc-error-icon {
+  background: rgba(241, 245, 249, 0.92);
+}
+
+.cc-error-icon-solid .cc-error-icon {
+  background: var(--error-primary);
+
+  color: #ffffff;
+
+  border-color: var(--error-primary);
+}
+
+.cc-error-icon-outline .cc-error-icon {
+  background: transparent;
+
+  border: 1.5px solid rgba(51, 65, 85, 0.35);
+}
+
+.cc-error-icon-glass .cc-error-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.3)
+  );
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 22px 50px rgba(15, 23, 42, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.cc-error-icon-premium .cc-error-icon {
+  background: linear-gradient(145deg, #ffffff, #e2e8f0);
+
+  box-shadow:
+    0 25px 55px rgba(15, 23, 42, 0.15),
+    inset 0 1px 0 #ffffff;
+}
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.cc-error-orbit {
+  position: absolute;
+
+  z-index: 1;
+
+  border: 1px solid rgba(100, 116, 139, 0.13);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.error-orbit-one {
+  width: 138%;
+  height: 138%;
+
+  animation: cc-error-orbit 13s linear infinite;
+}
+
+.error-orbit-two {
+  width: 168%;
+  height: 168%;
+
+  border-style: dashed;
+
+  opacity: 0.45;
+
+  animation: cc-error-orbit-reverse 19s linear infinite;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cc-error-eyebrow {
+  margin-bottom: 11px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.cc-error-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 14px;
+
+  padding: 6px 11px;
+
+  border: 1px solid rgba(148, 163, 184, 0.22);
+
+  border-radius: 999px;
+
+  background: rgba(241, 245, 249, 0.8);
+
+  color: #475569;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+.cc-error-badge span {
+  display: flex;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cc-error-content {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.cc-error-title {
+  margin: 0;
+
+  color: var(--error-text);
+
+  font-size: 25px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.035em;
+}
+
+.cc-error-description {
+  max-width: 540px;
+
+  margin: 11px auto 0;
+
+  color: var(--error-muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   ERROR CODE
+========================================================= */
+
+.cc-error-code {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 15px;
+
+  padding: 5px 9px;
+
+  border: 1px solid rgba(148, 163, 184, 0.18);
+
+  border-radius: 7px;
+
+  background: rgba(241, 245, 249, 0.65);
+
+  font-family: "SFMono-Regular", Consolas, monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.04em;
+}
+
+.cc-error-code span {
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+.cc-error-code strong {
+  color: #475569;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.cc-error-meta {
+  margin-top: 12px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   TECHNICAL DETAILS
+========================================================= */
+
+.cc-error-details {
+  width: 100%;
+
+  max-width: 540px;
+
+  margin-top: 18px;
+
+  text-align: left;
+
+  border: 1px solid rgba(148, 163, 184, 0.18);
+
+  border-radius: 13px;
+
+  background: rgba(248, 250, 252, 0.75);
+
+  overflow: hidden;
+}
+
+.cc-error-details summary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 14px;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.cc-error-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.cc-error-details summary svg {
+  width: 14px;
+  height: 14px;
+}
+
+.cc-error-details-content {
+  padding: 0 14px 14px;
+
+  color: #64748b;
+
+  font-family: "SFMono-Regular", Consolas, monospace;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+
+  white-space: pre-wrap;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.cc-error-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.cc-error-action {
+  min-height: 43px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border-radius: 12px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.cc-error-action svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cc-error-action:hover {
+  transform: translateY(-2px);
+}
+
+.cc-error-action:active {
+  transform: translateY(0);
+}
+
+.cc-error-action:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* PRIMARY */
+
+.cc-error-action-primary {
+  border: 1px solid var(--error-primary);
+
+  background: var(--error-primary);
+
+  color: #ffffff;
+
+  box-shadow: 0 9px 22px rgba(51, 65, 85, 0.17);
+}
+
+.cc-error-action-primary:hover {
+  background: var(--error-primary-dark);
+
+  box-shadow: 0 13px 28px rgba(51, 65, 85, 0.22);
+}
+
+/* SECONDARY */
+
+.cc-error-action-secondary {
+  border: 1px solid rgba(148, 163, 184, 0.3);
+
+  background: rgba(255, 255, 255, 0.78);
+
+  color: #475569;
+}
+
+.cc-error-action-secondary:hover {
+  background: #f8fafc;
+}
+
+/* =========================================================
+   LINK ACTIONS
+========================================================= */
+
+.cc-error-link-action {
+  min-height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0 8px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #64748b;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.cc-error-link-action:hover {
+  color: #1e293b;
+}
+
+.cc-error-link-action:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+.cc-error-link-action svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.cc-error-button-loader {
+  width: 14px;
+  height: 14px;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: cc-error-spin 0.7s linear infinite;
+}
+
+/* =========================================================
+   CUSTOM
+========================================================= */
+
+.cc-error-custom {
+  width: 100%;
+
+  margin-top: 23px;
+}
+
+/* =========================================================
+   VARIANT: GLASS
+========================================================= */
+
+.cc-error-glass {
+  margin: 10px 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.58);
+
+  border-radius: 29px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.74),
+    rgba(255, 255, 255, 0.38)
+  );
+
+  backdrop-filter: blur(22px);
+
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 28px 75px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+/* =========================================================
+   VARIANT: PREMIUM
+========================================================= */
+
+.cc-error-premium {
+  border: 1px solid rgba(148, 163, 184, 0.17);
+
+  border-radius: 29px;
+
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+
+  box-shadow:
+    0 28px 75px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 #ffffff;
+}
+
+.cc-error-premium .cc-error-title {
+  font-size: 28px;
+}
+
+/* =========================================================
+   VARIANT: ERROR
+========================================================= */
+
+.cc-error-error {
+  --error-primary: #b91c1c;
+  --error-primary-dark: #991b1b;
+}
+
+.cc-error-error .cc-error-icon {
+  color: var(--error-danger);
+
+  background: #fef2f2;
+
+  border-color: rgba(185, 28, 28, 0.14);
+}
+
+.cc-error-error .cc-error-icon-glow {
+  background: radial-gradient(circle, rgba(185, 28, 28, 0.1), transparent 68%);
+}
+
+/* =========================================================
+   VARIANT: WARNING
+========================================================= */
+
+.cc-error-warning {
+  --error-primary: #a16207;
+  --error-primary-dark: #854d0e;
+}
+
+.cc-error-warning .cc-error-icon {
+  color: #a16207;
+
+  background: #fefce8;
+
+  border-color: rgba(161, 98, 7, 0.15);
+}
+
+/* =========================================================
+   VARIANT: NETWORK
+========================================================= */
+
+.cc-error-network .cc-error-icon {
+  color: #475569;
+
+  background: #f1f5f9;
+}
+
+/* =========================================================
+   VARIANT: RESTRICTED
+========================================================= */
+
+.cc-error-restricted .cc-error-icon {
+  border-radius: 50%;
+
+  color: #475569;
+
+  background: #f1f5f9;
+}
+
+/* =========================================================
+   VARIANT: SESSION
+========================================================= */
+
+.cc-error-session .cc-error-icon {
+  color: #475569;
+
+  background: #f8fafc;
+}
+
+/* =========================================================
+   VARIANT: NOT FOUND
+========================================================= */
+
+.cc-error-notFound .cc-error-icon {
+  background: #f8fafc;
+
+  color: #64748b;
+}
+
+/* =========================================================
+   VARIANT: MAINTENANCE
+========================================================= */
+
+.cc-error-maintenance .cc-error-icon {
+  color: #475569;
+
+  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+}
+
+/* =========================================================
+   BORDERS
+========================================================= */
+
+.cc-error-bordered {
+  border: 1px solid var(--error-border);
+
+  border-radius: 24px;
+}
+
+/* =========================================================
+   ELEVATED
+========================================================= */
+
+.cc-error-elevated {
+  border: 1px solid rgba(148, 163, 184, 0.14);
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================
+   COMPACT
+========================================================= */
+
+.cc-error-compact {
+  padding: 28px 20px;
+}
+
+.cc-error-compact .cc-error-icon-wrap {
+  --error-icon-size: 55px;
+
+  margin-bottom: 17px;
+}
+
+.cc-error-compact .cc-error-title {
+  font-size: 18px;
+}
+
+.cc-error-compact .cc-error-description {
+  font-size: 12px;
+
+  margin-top: 7px;
+}
+
+.cc-error-compact .cc-error-actions {
+  margin-top: 17px;
+}
+
+/* =========================================================
+   SIZES
+========================================================= */
+
+.cc-error-xs {
+  padding: 20px 16px;
+}
+
+.cc-error-xs .cc-error-icon-wrap {
+  --error-icon-size: 43px;
+
+  margin-bottom: 12px;
+}
+
+.cc-error-xs .cc-error-title {
+  font-size: 15px;
+}
+
+.cc-error-xs .cc-error-description {
+  font-size: 11px;
+}
+
+.cc-error-sm {
+  padding: 30px 20px;
+}
+
+.cc-error-sm .cc-error-icon-wrap {
+  --error-icon-size: 56px;
+
+  margin-bottom: 17px;
+}
+
+.cc-error-sm .cc-error-title {
+  font-size: 19px;
+}
+
+.cc-error-sm .cc-error-description {
+  font-size: 12px;
+}
+
+.cc-error-lg {
+  padding: 68px 30px;
+}
+
+.cc-error-lg .cc-error-icon-wrap {
+  --error-icon-size: 91px;
+
+  margin-bottom: 29px;
+}
+
+.cc-error-lg .cc-error-title {
+  font-size: 30px;
+}
+
+.cc-error-lg .cc-error-description {
+  font-size: 15px;
+}
+
+.cc-error-xl {
+  padding: 95px 30px;
+}
+
+.cc-error-xl .cc-error-icon-wrap {
+  --error-icon-size: 112px;
+
+  margin-bottom: 34px;
+}
+
+.cc-error-xl .cc-error-title {
+  font-size: 35px;
+}
+
+.cc-error-xl .cc-error-description {
+  font-size: 16px;
+}
+
+/* =========================================================
+   ALIGNMENT
+========================================================= */
+
+.cc-error-align-left {
+  justify-content: flex-start;
+
+  text-align: left;
+}
+
+.cc-error-align-left .cc-error-inner {
+  align-items: flex-start;
+}
+
+.cc-error-align-left .cc-error-content {
+  align-items: flex-start;
+}
+
+.cc-error-align-left .cc-error-description {
+  margin-left: 0;
+}
+
+.cc-error-align-left .cc-error-actions {
+  justify-content: flex-start;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cc-error-pulse {
+  0%,
+  100% {
+    transform: scale(0.95);
+
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.08);
+
+    opacity: 1;
+  }
+}
+
+@keyframes cc-error-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cc-error-orbit-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes cc-error-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .cc-error-state {
+    padding: 38px 18px;
+  }
+
+  .cc-error-title {
+    font-size: 21px;
+  }
+
+  .cc-error-description {
+    font-size: 13px;
+  }
+
+  .cc-error-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .cc-error-action {
+    width: 100%;
+  }
+
+  .cc-error-link-action {
+    justify-content: center;
+  }
+
+  .cc-error-lg .cc-error-title {
+    font-size: 25px;
+  }
+
+  .cc-error-xl .cc-error-title {
+    font-size: 28px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-error-icon-glow,
+  .cc-error-orbit,
+  .cc-error-button-loader {
+    animation: none;
+  }
+
+  .cc-error-action {
+    transition: none;
+  }
+}

@@ -1,0 +1,958 @@
+/* =========================================================
+   CAPACITY CONNECT
+   LEARNER WELCOME BANNER
+========================================================= */
+
+/* =========================================================
+   MAIN BANNER
+========================================================= */
+
+.welcome-banner {
+  width: 100%;
+  min-height: 235px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  padding: 32px 36px;
+
+  border: 1px solid #cfe7ef;
+
+  border-radius: 18px;
+
+  background: #e9f8fc;
+
+  box-shadow: 0 8px 26px rgba(6, 31, 53, 0.05);
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.welcome-banner__background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   SOFT GLOWS
+========================================================= */
+
+.welcome-banner__glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.welcome-banner__glow--one {
+  width: 280px;
+  height: 280px;
+
+  top: -170px;
+  right: 250px;
+
+  background: rgba(53, 190, 226, 0.12);
+
+  filter: blur(2px);
+}
+
+.welcome-banner__glow--two {
+  width: 220px;
+  height: 220px;
+
+  bottom: -150px;
+  right: 70px;
+
+  background: rgba(22, 130, 168, 0.08);
+
+  filter: blur(2px);
+}
+
+/* =========================================================
+   DECORATIVE WAVES
+========================================================= */
+
+.welcome-banner__wave {
+  position: absolute;
+
+  width: 420px;
+  height: 110px;
+
+  border: 1px solid rgba(53, 190, 226, 0.12);
+
+  border-radius: 50%;
+
+  transform: rotate(-8deg);
+
+  pointer-events: none;
+}
+
+.welcome-banner__wave--one {
+  right: -110px;
+  bottom: -72px;
+}
+
+.welcome-banner__wave--two {
+  right: -140px;
+  bottom: -92px;
+
+  opacity: 0.65;
+}
+
+.welcome-banner__wave--three {
+  right: -170px;
+  bottom: -112px;
+
+  opacity: 0.4;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.welcome-banner__content {
+  width: 58%;
+
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.welcome-banner__eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 11px;
+
+  color: #1682a8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+
+  line-height: 1.2;
+}
+
+.welcome-banner__eyebrow-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #35bee2;
+
+  box-shadow: 0 0 0 4px rgba(53, 190, 226, 0.12);
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.welcome-banner__title {
+  margin: 0;
+
+  color: #061f35;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: clamp(27px, 2.4vw, 36px);
+
+  font-weight: 750;
+
+  letter-spacing: -1px;
+
+  line-height: 1.12;
+}
+
+/* =========================================================
+   WAVE EMOJI
+========================================================= */
+
+.welcome-banner__wave-emoji {
+  display: inline-block;
+
+  margin-left: 2px;
+
+  font-size: 0.82em;
+
+  transform-origin: 70% 70%;
+
+  animation: welcome-wave 2.8s ease-in-out infinite;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.welcome-banner__description {
+  max-width: 600px;
+
+  margin: 12px 0 0;
+
+  color: #294f68;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.welcome-banner__quote {
+  margin: 10px 0 0;
+
+  color: #5d8094;
+
+  font-size: 12px;
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.welcome-banner__action {
+  margin-top: 19px;
+}
+
+/* =========================================================
+   REUSABLE BUTTON
+========================================================= */
+
+.welcome-banner__button {
+  min-width: 132px;
+
+  box-shadow: 0 7px 18px rgba(11, 109, 145, 0.16);
+}
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.welcome-banner__visual {
+  width: 42%;
+  height: 100%;
+
+  position: absolute;
+
+  right: 0;
+  top: 0;
+
+  z-index: 3;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   ORBIT
+========================================================= */
+
+.welcome-banner__orbit {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: 50%;
+  right: 55px;
+
+  transform: translateY(-50%) rotate(-18deg);
+
+  border: 1px solid rgba(22, 130, 168, 0.13);
+
+  border-radius: 50%;
+}
+
+.welcome-banner__orbit::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 25px;
+
+  border: 1px solid rgba(53, 190, 226, 0.12);
+
+  border-radius: 50%;
+}
+
+.welcome-banner__orbit-dot {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  top: 22px;
+  right: 45px;
+
+  border-radius: 50%;
+
+  background: #35bee2;
+
+  box-shadow: 0 0 0 7px rgba(53, 190, 226, 0.1);
+}
+
+/* =========================================================
+   STUDENT
+========================================================= */
+
+.welcome-banner__student {
+  position: absolute;
+
+  width: 155px;
+  height: 170px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -43%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================================
+   STUDENT HEAD
+========================================================= */
+
+.welcome-banner__student-head {
+  width: 48px;
+  height: 48px;
+
+  position: relative;
+
+  margin-bottom: 4px;
+
+  border-radius: 50%;
+
+  background: #f3c7a6;
+
+  border: 2px solid rgba(6, 31, 53, 0.1);
+}
+
+/* Hair */
+
+.welcome-banner__student-head::before {
+  content: "";
+
+  position: absolute;
+
+  width: 43px;
+  height: 25px;
+
+  top: -5px;
+  left: 1px;
+
+  border-radius: 50% 50% 35% 35%;
+
+  background: #092b43;
+}
+
+/* Face detail */
+
+.welcome-banner__student-head span::before,
+.welcome-banner__student-head span::after {
+  content: "";
+
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  top: 24px;
+
+  border-radius: 50%;
+
+  background: #263f50;
+}
+
+.welcome-banner__student-head span::before {
+  left: 13px;
+}
+
+.welcome-banner__student-head span::after {
+  right: 13px;
+}
+
+/* =========================================================
+   STUDENT BODY
+========================================================= */
+
+.welcome-banner__student-body {
+  width: 108px;
+  height: 91px;
+
+  position: relative;
+
+  border-radius: 42px 42px 16px 16px;
+
+  background: #1682a8;
+
+  box-shadow: 0 13px 25px rgba(6, 31, 53, 0.13);
+}
+
+/* Shirt highlight */
+
+.welcome-banner__student-body::before {
+  content: "";
+
+  position: absolute;
+
+  width: 38px;
+  height: 70px;
+
+  left: 17px;
+  top: 10px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  transform: rotate(18deg);
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+.welcome-banner__laptop {
+  position: absolute;
+
+  width: 112px;
+
+  left: 50%;
+  bottom: -12px;
+
+  transform: translateX(-50%);
+}
+
+/* Laptop screen */
+
+.welcome-banner__laptop-screen {
+  width: 86px;
+  height: 53px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 4px solid #082642;
+
+  border-bottom-width: 6px;
+
+  border-radius: 7px 7px 3px 3px;
+
+  color: #35bee2;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 5px 10px rgba(6, 31, 53, 0.13);
+}
+
+.welcome-banner__laptop-screen svg {
+  width: 25px;
+  height: 25px;
+
+  stroke-width: 1.8;
+}
+
+/* Laptop base */
+
+.welcome-banner__laptop-base {
+  width: 112px;
+  height: 7px;
+
+  margin-top: 2px;
+
+  border-radius: 0 0 8px 8px;
+
+  background: #082642;
+}
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.welcome-banner__floating-card {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 9px 11px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(180, 219, 231, 0.75);
+
+  border-radius: 10px;
+
+  box-shadow: 0 10px 25px rgba(6, 31, 53, 0.08);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Achievement card */
+
+.welcome-banner__floating-card--achievement {
+  top: 32px;
+  right: 48px;
+}
+
+/* Skills card */
+
+.welcome-banner__floating-card--skills {
+  right: 31px;
+  bottom: 27px;
+}
+
+/* =========================================================
+   FLOATING ICON
+========================================================= */
+
+.welcome-banner__floating-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #e5f7fb;
+
+  color: #0b789b;
+}
+
+.welcome-banner__floating-icon svg {
+  width: 15px;
+  height: 15px;
+
+  stroke-width: 1.9;
+}
+
+/* =========================================================
+   FLOATING TEXT
+========================================================= */
+
+.welcome-banner__floating-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.welcome-banner__floating-text strong {
+  color: #173a50;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+.welcome-banner__floating-text span {
+  color: #7895a9;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   PLANT
+========================================================= */
+
+.welcome-banner__plant {
+  position: absolute;
+
+  width: 65px;
+  height: 100px;
+
+  left: 10px;
+  bottom: -10px;
+}
+
+/* Stem */
+
+.welcome-banner__plant-stem {
+  position: absolute;
+
+  width: 2px;
+  height: 74px;
+
+  left: 31px;
+  bottom: 0;
+
+  background: #45a98b;
+
+  transform: rotate(-4deg);
+
+  transform-origin: bottom;
+}
+
+/* Leaves */
+
+.welcome-banner__leaf {
+  position: absolute;
+
+  width: 27px;
+  height: 13px;
+
+  border-radius: 100% 0 100% 0;
+
+  background: #5ac4a0;
+}
+
+.welcome-banner__leaf--one {
+  left: 10px;
+  bottom: 43px;
+
+  transform: rotate(-35deg);
+}
+
+.welcome-banner__leaf--two {
+  right: 7px;
+  bottom: 57px;
+
+  transform: rotate(35deg);
+}
+
+.welcome-banner__leaf--three {
+  left: 19px;
+  bottom: 72px;
+
+  transform: rotate(-12deg);
+
+  opacity: 0.78;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.welcome-banner:hover {
+  border-color: #b9dfe9;
+
+  box-shadow: 0 11px 30px rgba(6, 31, 53, 0.07);
+}
+
+.welcome-banner:hover .welcome-banner__orbit {
+  transform: translateY(-50%) rotate(-14deg);
+}
+
+.welcome-banner:hover .welcome-banner__floating-card {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TRANSITIONS
+========================================================= */
+
+.welcome-banner__orbit,
+.welcome-banner__floating-card {
+  transition: transform 300ms ease;
+}
+
+/* =========================================================
+   WAVE ANIMATION
+========================================================= */
+
+@keyframes welcome-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+
+  20%,
+  40% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .welcome-banner {
+    min-height: 225px;
+
+    padding: 30px;
+  }
+
+  .welcome-banner__content {
+    width: 62%;
+  }
+
+  .welcome-banner__visual {
+    width: 38%;
+  }
+
+  .welcome-banner__floating-card--achievement {
+    right: 25px;
+  }
+
+  .welcome-banner__floating-card--skills {
+    right: 18px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .welcome-banner {
+    min-height: 215px;
+
+    padding: 27px;
+  }
+
+  .welcome-banner__content {
+    width: 68%;
+  }
+
+  .welcome-banner__visual {
+    width: 32%;
+
+    opacity: 0.72;
+  }
+
+  .welcome-banner__title {
+    font-size: 27px;
+  }
+
+  .welcome-banner__description {
+    font-size: 14px;
+  }
+
+  .welcome-banner__quote {
+    font-size: 11px;
+  }
+
+  .welcome-banner__floating-card {
+    transform: scale(0.86);
+
+    transform-origin: center;
+  }
+
+  .welcome-banner__floating-card--achievement {
+    right: -2px;
+    top: 22px;
+  }
+
+  .welcome-banner__floating-card--skills {
+    right: -7px;
+    bottom: 17px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .welcome-banner {
+    min-height: 255px;
+
+    padding: 25px 22px;
+  }
+
+  .welcome-banner__content {
+    width: 100%;
+  }
+
+  .welcome-banner__visual {
+    width: 100%;
+
+    opacity: 0.18;
+  }
+
+  .welcome-banner__title {
+    max-width: 100%;
+
+    font-size: 27px;
+
+    letter-spacing: -0.7px;
+  }
+
+  .welcome-banner__description {
+    max-width: 430px;
+
+    font-size: 13px;
+  }
+
+  .welcome-banner__quote {
+    max-width: 400px;
+  }
+
+  .welcome-banner__action {
+    margin-top: 17px;
+  }
+
+  .welcome-banner__floating-card {
+    display: none;
+  }
+
+  .welcome-banner__orbit {
+    right: 5%;
+
+    width: 230px;
+    height: 230px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .welcome-banner {
+    min-height: 250px;
+
+    padding: 22px 18px;
+
+    border-radius: 15px;
+  }
+
+  .welcome-banner__eyebrow {
+    margin-bottom: 9px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+  }
+
+  .welcome-banner__title {
+    font-size: 24px;
+  }
+
+  .welcome-banner__description {
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+  .welcome-banner__quote {
+    margin-top: 8px;
+
+    font-size: 10px;
+  }
+
+  .welcome-banner__action {
+    margin-top: 15px;
+  }
+
+  .welcome-banner__button {
+    min-width: 120px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+  .welcome-banner {
+    min-height: 245px;
+
+    padding: 20px 16px;
+  }
+
+  .welcome-banner__title {
+    font-size: 22px;
+  }
+
+  .welcome-banner__description {
+    font-size: 11px;
+  }
+
+  .welcome-banner__quote {
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-banner__wave-emoji {
+    animation: none;
+  }
+
+  .welcome-banner__orbit,
+  .welcome-banner__floating-card {
+    transition: none;
+  }
+}

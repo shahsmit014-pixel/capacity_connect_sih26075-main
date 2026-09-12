@@ -1,0 +1,347 @@
+/* =========================================================
+   COURSE CATALOG PAGE
+   ========================================================= */
+
+.course-catalog-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+/* =========================================================
+   RESULTS SECTION
+   ========================================================= */
+
+.course-catalog-results {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+
+  box-sizing: border-box;
+}
+
+.course-catalog-results__header {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+.course-catalog-results__eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6b858d;
+
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.4;
+
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.course-catalog-results__title {
+  margin: 0;
+
+  color: #294751;
+
+  font-size: 21px;
+  font-weight: 750;
+  line-height: 1.25;
+
+  letter-spacing: -0.025em;
+}
+
+.course-catalog-results__count {
+  flex: 0 0 auto;
+
+  color: #678087;
+
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   COURSE GRID
+   ========================================================= */
+
+.course-catalog-grid {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  box-sizing: border-box;
+}
+
+.course-catalog-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.course-catalog-empty {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 25px;
+
+  text-align: center;
+
+  border: 1px solid #e1e9e8;
+  border-radius: 18px;
+
+  background: rgba(250, 252, 251, 0.9);
+
+  box-sizing: border-box;
+}
+
+.course-catalog-empty__icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 15px;
+
+  background: #edf6f5;
+
+  font-size: 25px;
+}
+
+.course-catalog-empty h3 {
+  margin: 0;
+
+  color: #35525c;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.course-catalog-empty p {
+  max-width: 520px;
+
+  margin: 9px 0 20px;
+
+  color: #74858a;
+
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.course-catalog-empty button {
+  min-height: 42px;
+
+  padding: 9px 18px;
+
+  border: 1px solid #c8dfe0;
+  border-radius: 9px;
+
+  background: #eef8f8;
+
+  color: #397d85;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.course-catalog-empty button:hover {
+  background: #e3f2f2;
+
+  border-color: #b5d5d7;
+}
+
+/* =========================================================
+   1200px
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .course-catalog-page {
+    gap: 25px;
+  }
+
+  .course-catalog-grid {
+    gap: 15px;
+  }
+}
+
+/* =========================================================
+   1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .course-catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+  }
+}
+
+/* =========================================================
+   900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .course-catalog-page {
+    gap: 24px;
+  }
+
+  .course-catalog-results {
+    gap: 15px;
+  }
+}
+
+/* =========================================================
+   700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .course-catalog-page {
+    gap: 22px;
+  }
+
+  .course-catalog-results__header {
+    align-items: flex-start;
+  }
+
+  .course-catalog-results__title {
+    font-size: 20px;
+  }
+
+  .course-catalog-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+}
+
+/* =========================================================
+   560px
+   ========================================================= */
+
+@media (max-width: 560px) {
+  .course-catalog-page {
+    gap: 20px;
+  }
+
+  .course-catalog-results__header {
+    gap: 10px;
+  }
+
+  .course-catalog-results__eyebrow {
+    font-size: 9px;
+  }
+
+  .course-catalog-results__title {
+    font-size: 19px;
+  }
+
+  .course-catalog-results__count {
+    font-size: 16px;
+  }
+
+  .course-catalog-empty {
+    padding: 45px 18px;
+  }
+}
+
+/* =========================================================
+   430px
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .course-catalog-page {
+    gap: 19px;
+  }
+
+  .course-catalog-results__title {
+    font-size: 18px;
+  }
+
+  .course-catalog-results__header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 4px;
+  }
+
+  .course-catalog-empty {
+    padding: 38px 15px;
+  }
+}
+
+/* =========================================================
+   360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .course-catalog-page {
+    gap: 18px;
+  }
+
+  .course-catalog-results__title {
+    font-size: 17px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .course-catalog-empty button {
+    transition: none;
+  }
+}

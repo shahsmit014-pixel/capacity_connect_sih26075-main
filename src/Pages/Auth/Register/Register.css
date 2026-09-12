@@ -1,0 +1,807 @@
+/* ==========================================================================
+   REGISTER COMPONENT STYLES - CAPACITY CONNECT
+   Scoped specifically to Register component with modern CSS variables
+   ========================================================================== */
+
+:root {
+  --cc-reg-bg: #f2f8fc;
+  --cc-reg-card: #ffffff;
+  --cc-reg-primary: #2563eb;
+  --cc-reg-primary-hover: #1d4ed8;
+  --cc-reg-text: #0b1f3a;
+  --cc-reg-muted: #64748b;
+  --cc-reg-border: #d6e5f2;
+  --cc-reg-border-hover: #a9c9e3;
+  --cc-reg-border-focus: #2563eb;
+  --cc-reg-card-radius: 28px;
+  --cc-reg-pill-radius: 9999px;
+  --cc-reg-shadow:
+    0 24px 50px -12px rgba(11, 31, 58, 0.1), 0 2px 12px rgba(37, 99, 235, 0.04);
+  --cc-reg-font:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --cc-reg-transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Page Wrapper */
+.cc-reg-page-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 70px 20px;
+  box-sizing: border-box;
+
+  background: transparent;
+  font-family: var(--cc-reg-font);
+  color: var(--cc-reg-text);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  animation: cc-reg-overlay-in 0.4s ease-out both;
+}
+
+.cc-reg-page-wrapper::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: rgba(7, 19, 32, 0.42);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(0px);
+
+  pointer-events: auto;
+}
+
+
+/* Main Split-Screen Authentication Container */
+.cc-reg-auth-container {
+  position: relative;
+  z-index: 1010;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  width: 100%;
+  max-width: 1140px;
+  min-height: 720px;
+  background-color: var(--cc-reg-card);
+  border-radius: var(--cc-reg-card-radius);
+  border: 1px solid var(--cc-reg-border);
+  box-shadow: var(--cc-reg-shadow);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Left Column: Form Pane */
+.cc-reg-form-pane {
+  padding: 44px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow-y: visible;
+}
+
+/* Branding & Logo */
+.cc-reg-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.cc-reg-brand-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.cc-reg-brand-name {
+  font-weight: 700;
+  color: var(--cc-reg-text);
+}
+
+.cc-reg-brand-highlight {
+  font-weight: 600;
+  color: #2563eb;
+  background-color: rgba(56, 189, 248, 0.14);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Header Typography */
+.cc-reg-header-block {
+  margin-bottom: 22px;
+}
+
+.cc-reg-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--cc-reg-text);
+  letter-spacing: -0.025em;
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+.cc-reg-subtitle {
+  font-size: 14px;
+  color: var(--cc-reg-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Social Buttons */
+.cc-reg-social-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cc-reg-social-btn {
+  height: 44px;
+  border-radius: var(--cc-reg-pill-radius);
+  border: 1px solid var(--cc-reg-border);
+  background-color: #ffffff;
+  color: var(--cc-reg-text);
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: var(--cc-reg-transition);
+}
+
+.cc-reg-social-btn:hover {
+  background-color: #eef7fc;
+  border-color: var(--cc-reg-border-hover);
+  transform: translateY(-1px);
+}
+
+.cc-reg-social-btn:active {
+  transform: translateY(0);
+}
+
+/* Divider */
+.cc-reg-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.cc-reg-divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--cc-reg-border);
+}
+
+.cc-reg-divider-text {
+  font-size: 12.5px;
+  color: var(--cc-reg-muted);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+}
+
+/* Feedback Alert */
+.cc-reg-success-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.cc-reg-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #10b981;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Form & Input Fields */
+.cc-reg-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cc-reg-field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.cc-reg-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cc-reg-text);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.cc-reg-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.cc-reg-input-icon {
+  position: absolute;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8c8c88;
+  pointer-events: none;
+  transition: var(--cc-reg-transition);
+}
+
+/* Pill-Shaped Input Fields */
+.cc-reg-input {
+  width: 100%;
+  height: 48px;
+  border-radius: var(--cc-reg-pill-radius);
+  border: 1px solid var(--cc-reg-border);
+  padding: 0 46px 0 48px;
+  font-size: 14px;
+  color: var(--cc-reg-text);
+  background-color: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+  transition: var(--cc-reg-transition);
+}
+
+.cc-reg-input::placeholder {
+  color: #a6a6a0;
+}
+
+.cc-reg-input:hover {
+  border-color: var(--cc-reg-border-hover);
+}
+
+.cc-reg-input:focus {
+  border-color: var(--cc-reg-border-focus);
+  box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.16);
+}
+
+.cc-reg-input.has-error {
+  border-color: #ef4444;
+  background-color: #fffdfd;
+}
+
+.cc-reg-input.has-error:focus {
+  box-shadow: 0 0 0 3.5px rgba(239, 68, 68, 0.18);
+}
+
+.cc-reg-input-wrapper:focus-within .cc-reg-input-icon {
+  color: var(--cc-reg-text);
+}
+
+/* Toggle Password Visibility Button */
+.cc-reg-eye-btn {
+  position: absolute;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #8c8c88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: var(--cc-reg-transition);
+}
+
+.cc-reg-eye-btn:hover {
+  color: var(--cc-reg-text);
+  background-color: #eef7fc;
+}
+
+/* Validation Error Text */
+.cc-reg-error-text {
+  font-size: 12px;
+  color: #dc2626;
+  margin-top: 5px;
+  margin-left: 14px;
+  font-weight: 500;
+}
+
+/* Terms & Conditions Checkbox */
+.cc-reg-terms-group {
+  margin: 6px 0 18px 0;
+}
+
+.cc-reg-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cc-reg-checkbox-hidden {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.cc-reg-custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--cc-reg-border);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--cc-reg-transition);
+  flex-shrink: 0;
+}
+
+.cc-reg-custom-checkbox.checked {
+  background-color: #ffffff;
+  border-color: #2563EB;
+  color: #FFFFFF;
+}
+
+.cc-reg-custom-checkbox.checkbox-error {
+  border-color: #ef4444;
+}
+
+.cc-reg-terms-text {
+  font-size: 13px;
+  color: var(--cc-reg-muted);
+  line-height: 1.4;
+}
+
+.cc-reg-terms-highlight {
+  color: var(--cc-reg-text);
+  font-weight: 600;
+}
+
+/* Primary "Create Account" Pill Button */
+.cc-reg-submit-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: var(--cc-reg-pill-radius);
+  background-color: var(--cc-reg-primary);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: var(--cc-reg-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cc-reg-submit-btn:hover {
+  background-color: var(--cc-reg-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.35);
+}
+
+.cc-reg-submit-btn:active {
+  transform: translateY(0);
+}
+
+.cc-reg-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Switch to Login Footer */
+.cc-reg-auth-switch {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--cc-reg-muted);
+  margin: 20px 0 0 0;
+}
+
+.cc-reg-auth-switch-link {
+  color: var(--cc-reg-text);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+  transition: var(--cc-reg-transition);
+}
+
+.cc-reg-auth-switch-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Right Column: Large Professional Teamwork Visual with Floating Cards
+   ========================================================================== */
+
+.cc-reg-visual-pane {
+  position: relative;
+  margin: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #08203d;
+}
+
+.cc-reg-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cc-reg-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 32, 61, 0.08) 0%,
+    rgba(8, 32, 61, 0.38) 50%,
+    rgba(5, 23, 43, 0.84) 100%
+  );
+  pointer-events: none;
+}
+
+/* Live Status Badge */
+.cc-reg-live-pill {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--cc-reg-pill-radius);
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cc-reg-text);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.cc-reg-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+/* Floating Cards Layout */
+.cc-reg-floating-cards {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+/* Individual Floating SaaS Cards */
+.cc-reg-float-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  padding: 14px 18px;
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.16);
+  pointer-events: auto;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease;
+}
+
+.cc-reg-float-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 38px -6px rgba(0, 0, 0, 0.22);
+}
+
+.cc-reg-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cc-reg-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(56, 189, 248, 0.18);
+  color: #2563eb;
+  border-radius: 6px;
+}
+
+.cc-reg-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5b7088;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cc-reg-card-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--cc-reg-text);
+  margin: 0 0 4px 0;
+}
+
+.cc-reg-card-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--cc-reg-muted);
+  margin: 0;
+}
+
+/* Position 1: Meeting Card (Top Left) */
+.cc-reg-float-card-1 {
+  top: 32px;
+  left: 24px;
+  max-width: 240px;
+}
+
+/* Position 2: Capacity Utilization Card (Middle Right) */
+.cc-reg-float-card-2 {
+  top: 170px;
+  right: 24px;
+  width: 210px;
+}
+
+.cc-reg-stat-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cc-reg-stat-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--cc-reg-text);
+  letter-spacing: -0.02em;
+}
+
+.cc-reg-stat-badge {
+  background-color: #ecfdf5;
+  color: #065f46;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.cc-reg-progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: #e6f0f7;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.cc-reg-progress-fill {
+  height: 100%;
+  background-color: var(--cc-reg-primary);
+  border-radius: 9999px;
+}
+
+/* Position 3: Milestone Card (Bottom Left) */
+.cc-reg-float-card-3 {
+  bottom: 30px;
+  left: 24px;
+  max-width: 230px;
+}
+
+/* Position 4: Small Avatar Circles (Bottom Right) */
+.cc-reg-float-card-4 {
+  bottom: 30px;
+  right: 24px;
+  min-width: 170px;
+}
+
+.cc-reg-avatar-cluster {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.cc-reg-avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+.cc-reg-avatar-circle:first-child {
+  margin-left: 0;
+}
+
+.cc-reg-avatar-counter {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #0b1f3a;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  margin-left: -8px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .cc-reg-page-wrapper {
+    padding: 16px 12px;
+  }
+
+  .cc-reg-auth-container {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    min-height: auto;
+  }
+
+  .cc-reg-form-pane {
+    padding: 36px 24px;
+  }
+
+  .cc-reg-visual-pane {
+    height: 380px;
+    margin: 12px;
+  }
+
+  .cc-reg-float-card-1 {
+    top: 20px;
+    left: 20px;
+    max-width: 210px;
+  }
+
+  .cc-reg-float-card-2 {
+    display: none;
+  }
+
+  .cc-reg-float-card-3 {
+    bottom: 20px;
+    left: 20px;
+    max-width: 200px;
+  }
+
+  .cc-reg-float-card-4 {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cc-reg-form-pane {
+    padding: 28px 18px;
+  }
+
+  .cc-reg-heading {
+    font-size: 24px;
+  }
+
+  .cc-reg-social-group {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-reg-visual-pane {
+    height: 280px;
+  }
+
+  .cc-reg-float-card-3 {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Back to Capacity Connect
+   Theme-only navigation control; does not alter the authentication layout.
+   -------------------------------------------------------------------------- */
+
+.cc-reg-back-link {
+  position: fixed;
+  top: 22px;
+  left: 24px;
+  z-index: 1100;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: var(--cc-reg-pill-radius);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--cc-reg-text);
+  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font: 600 12.5px/1 var(--cc-reg-font);
+  cursor: pointer;
+  transition: var(--cc-reg-transition);
+}
+
+.cc-reg-back-link:hover {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(56, 189, 248, 0.55);
+  color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.14);
+}
+
+.cc-reg-back-link:active {
+  transform: translateY(0);
+}
+
+.cc-reg-back-link:focus-visible {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+@media (max-width: 480px) {
+  .cc-reg-back-link {
+    top: 12px;
+    left: 12px;
+    padding: 8px 11px;
+    font-size: 11.5px;
+  }
+}
+
+@keyframes cc-reg-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

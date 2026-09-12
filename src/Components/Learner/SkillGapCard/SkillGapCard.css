@@ -1,0 +1,1615 @@
+/* ================================================================
+   SKILL GAP SECTION
+================================================================ */
+
+.skill-gap-section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ================================================================
+   SECTION HEADER
+================================================================ */
+
+.skill-gap-section__header {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+
+  box-sizing: border-box;
+}
+
+.skill-gap-section__heading {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.skill-gap-section__eyebrow {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #6c8290;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.skill-gap-section__title {
+  margin: 0;
+
+  color: #17384a;
+  font-size: 21px;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.skill-gap-section__description {
+  max-width: 680px;
+  margin: 7px 0 0;
+
+  color: #718692;
+  font-size: 16px;
+  line-height: 1.55;
+
+  overflow-wrap: break-word;
+}
+
+.skill-gap-section__view-all {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 38px;
+  padding: 8px 15px;
+
+  border: 1px solid #d8e4ea;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #176b91;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.skill-gap-section__view-all svg {
+  width: 15px;
+  height: 15px;
+
+  transition: transform 180ms ease;
+}
+
+.skill-gap-section__view-all:hover {
+  border-color: #9dcddd;
+  background: #f5fbfd;
+  color: #0f5878;
+}
+
+.skill-gap-section__view-all:hover svg {
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   TOP GRID
+================================================================ */
+
+.skill-gap-section__top-grid {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  /*
+    minmax(0, ...) is important here.
+    It prevents either card from forcing the grid wider
+    than the available dashboard content area.
+  */
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.25fr);
+
+  gap: 18px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.skill-gap-section__top-grid > * {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+/* ================================================================
+   CARD WIDTH PROTECTION
+================================================================ */
+
+.skill-biggest-gap-card,
+.skill-gap-summary-card,
+.skill-gap-list-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+/*
+   If your reusable Card root uses the .card class,
+   this prevents it from expanding beyond the grid.
+*/
+.skill-gap-section .card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+/* ================================================================
+   SHARED CARD EYEBROW
+================================================================ */
+
+.skill-gap-card__eyebrow {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #82949d;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.skill-gap-card__eyebrow--dark {
+  color: #91aebd;
+}
+
+/* ================================================================
+   BIGGEST SKILL GAP — DARK CARD
+================================================================ */
+
+.skill-biggest-gap-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 390px;
+
+  background: #17384a;
+  border-color: #214b60;
+
+  color: #ffffff;
+}
+
+.skill-biggest-gap-card::after {
+  content: "";
+
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+
+  width: 210px;
+  height: 210px;
+
+  border: 1px solid rgba(153, 202, 219, 0.12);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.skill-biggest-gap-card__content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+.skill-biggest-gap-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  min-width: 0;
+}
+
+.skill-biggest-gap-card__title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.skill-biggest-gap-card__title-row h3 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+
+  overflow-wrap: break-word;
+}
+
+.skill-biggest-gap-card__gap-badge {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 25px;
+  padding: 4px 9px;
+
+  border: 1px solid rgba(246, 180, 120, 0.22);
+  border-radius: 7px;
+
+  background: rgba(224, 123, 70, 0.14);
+  color: #f2b17d;
+
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+.skill-biggest-gap-card__category {
+  margin: 5px 0 0;
+
+  color: #9db5c0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.skill-biggest-gap-card__alert-icon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid rgba(237, 163, 115, 0.18);
+  border-radius: 11px;
+
+  background: rgba(229, 131, 78, 0.12);
+  color: #eca26f;
+}
+
+.skill-biggest-gap-card__alert-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.skill-biggest-gap-card__description {
+  width: 100%;
+  max-width: 580px;
+
+  margin: 22px 0 24px;
+
+  color: #b2c4cc;
+  font-size: 16px;
+  line-height: 1.6;
+
+  overflow-wrap: break-word;
+}
+
+/* ================================================================
+   CURRENT / TARGET LEVELS
+================================================================ */
+
+.skill-biggest-gap-card__levels {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 14px 0;
+
+  border-top: 1px solid rgba(206, 229, 237, 0.1);
+  border-bottom: 1px solid rgba(206, 229, 237, 0.1);
+
+  box-sizing: border-box;
+}
+
+.skill-biggest-gap-card__level {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skill-biggest-gap-card__level span {
+  color: #8fa8b5;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.skill-biggest-gap-card__level strong {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.skill-biggest-gap-card__level-arrow {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #668b9b;
+}
+
+.skill-biggest-gap-card__level-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ================================================================
+   BIGGEST GAP PROGRESS
+================================================================ */
+
+.skill-biggest-gap-card__progress {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-top: 21px;
+}
+
+.skill-biggest-gap-card__progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-bottom: 9px;
+}
+
+.skill-biggest-gap-card__progress-header span {
+  color: #9db3bd;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.skill-biggest-gap-card__progress-header span:last-child {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ================================================================
+   BIGGEST GAP ACTION
+================================================================ */
+
+.skill-biggest-gap-card__action {
+  align-self: flex-start;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 40px;
+
+  margin-top: 10px;
+  padding: 9px 14px;
+  border: 1px solid rgba(202, 229, 238, 0.2);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.skill-biggest-gap-card__action svg {
+  width: 15px;
+  height: 15px;
+
+  transition: transform 180ms ease;
+}
+
+.skill-biggest-gap-card__action:hover {
+  border-color: rgba(202, 229, 238, 0.32);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.skill-biggest-gap-card__action:hover svg {
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   GAP SUMMARY CARD
+================================================================ */
+
+.skill-gap-summary-card {
+  min-height: 390px;
+
+  overflow: hidden;
+}
+
+.skill-gap-summary-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  min-width: 0;
+}
+
+.skill-gap-summary-card__header h3 {
+  margin: 0;
+
+  color: #17384a;
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.skill-gap-summary-card__icon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #dcebef;
+  border-radius: 11px;
+
+  background: #f1f8fa;
+  color: #337e97;
+}
+
+.skill-gap-summary-card__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ================================================================
+   GAP SUMMARY MAIN
+================================================================ */
+
+.skill-gap-summary-card__main {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.75fr)
+    minmax(0, 1.25fr);
+
+  gap: 20px;
+
+  align-items: center;
+
+  margin-top: 27px;
+
+  box-sizing: border-box;
+}
+
+.skill-gap-summary-card__score {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.skill-gap-summary-card__score strong {
+  color: #1b5267;
+
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+.skill-gap-summary-card__score span {
+  color: #738892;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.skill-gap-summary-card__status {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 13px;
+
+  border: 1px solid #e7ecef;
+  border-radius: 12px;
+
+  background: #fafcfd;
+
+  box-sizing: border-box;
+}
+
+.skill-gap-summary-card__status-icon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 10px;
+
+  background: #fff2e5;
+  color: #c57d30;
+}
+
+.skill-gap-summary-card__status-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.skill-gap-summary-card__status div {
+  min-width: 0;
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.skill-gap-summary-card__status strong {
+  color: #375866;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.skill-gap-summary-card__status div span {
+  color: #82939b;
+  font-size: 16px;
+  line-height: 1.45;
+
+  overflow-wrap: break-word;
+}
+
+/* ================================================================
+   SUMMARY STATS
+================================================================ */
+
+.skill-gap-summary-card__stats {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  box-sizing: border-box;
+}
+
+.skill-gap-summary-card__stat {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 11px;
+
+  border: 1px solid #e6edf0;
+  border-radius: 11px;
+
+  background: #fbfcfd;
+
+  box-sizing: border-box;
+}
+
+.skill-gap-summary-card__stat-icon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 31px;
+  height: 31px;
+
+  border-radius: 9px;
+}
+
+.skill-gap-summary-card__stat-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.skill-gap-summary-card__stat-icon--danger {
+  background: #fff0ed;
+  color: #c65d4e;
+}
+
+.skill-gap-summary-card__stat-icon--warning {
+  background: #fff3e2;
+  color: #c58534;
+}
+
+.skill-gap-summary-card__stat-icon--success {
+  background: #eaf7ef;
+  color: #47906b;
+}
+
+.skill-gap-summary-card__stat div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.skill-gap-summary-card__stat strong {
+  color: #345765;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.skill-gap-summary-card__stat div span {
+  color: #84959d;
+  font-size: 14px;
+  line-height: 1.3;
+
+  overflow-wrap: break-word;
+}
+
+/* ================================================================
+   SUMMARY FOOTER
+================================================================ */
+
+.skill-gap-summary-card__footer {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: auto;
+  padding-top: 18px;
+
+  border-top: 1px solid #e8eef1;
+
+  box-sizing: border-box;
+}
+
+.skill-gap-summary-card__footer-text {
+  flex: 1 1 auto;
+
+  min-width: 0;
+  max-width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  color: #7b8e97;
+  font-size: 16px;
+  line-height: 1.45;
+
+  overflow-wrap: break-word;
+}
+
+.skill-gap-summary-card__footer-text svg {
+  flex: 0 0 auto;
+
+  width: 16px;
+  height: 16px;
+
+  margin-top: 2px;
+
+  color: #5c91a3;
+}
+
+.skill-gap-summary-card__footer-action {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #267d98;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.skill-gap-summary-card__footer-action svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ================================================================
+   YOUR SKILL GAPS CARD
+================================================================ */
+
+.skill-gap-list-card {
+  overflow: hidden;
+}
+
+.skill-gap-list-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  min-width: 0;
+
+  margin-bottom: 22px;
+}
+
+.skill-gap-list-card__header h3 {
+  margin: 0;
+
+  color: #17384a;
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+/* ================================================================
+   GAP LIST
+================================================================ */
+
+.skill-gap-list {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.skill-gap-item {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, 1.15fr)
+    minmax(130px, 0.7fr)
+    minmax(190px, 1.35fr)
+    minmax(130px, 0.7fr)
+    40px;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 15px;
+
+  border: 1px solid #e5edf0;
+  border-radius: 13px;
+
+  background: #fbfcfd;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.skill-gap-item:hover {
+  border-color: #d2e3e8;
+
+  box-shadow: 0 7px 18px rgba(35, 74, 91, 0.055);
+
+  transform: translateY(-1px);
+}
+
+/* ================================================================
+   GAP ITEM IDENTITY
+================================================================ */
+
+.skill-gap-item__identity {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.skill-gap-item__icon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 11px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.skill-gap-item__icon--danger {
+  background: #fff0ed;
+  color: #c75e4f;
+}
+
+.skill-gap-item__icon--warning {
+  background: #fff3e3;
+  color: #c28232;
+}
+
+.skill-gap-item__identity-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.skill-gap-item__identity-text h4 {
+  overflow: hidden;
+
+  margin: 0;
+
+  color: #294f60;
+
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.35;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skill-gap-item__identity-text span {
+  color: #82949d;
+  font-size: 16px;
+  line-height: 1.3;
+
+  overflow-wrap: break-word;
+}
+
+/* ================================================================
+   GAP ITEM LEVELS
+================================================================ */
+
+.skill-gap-item__levels {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.skill-gap-item__levels > svg {
+  flex: 0 0 auto;
+
+  width: 15px;
+  height: 15px;
+
+  color: #9aa9af;
+}
+
+.skill-gap-item__levels div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.skill-gap-item__levels div span {
+  color: #8b9aa1;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.skill-gap-item__levels div strong {
+  color: #3c5d69;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+/* ================================================================
+   GAP ITEM PROGRESS
+================================================================ */
+
+.skill-gap-item__progress {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.skill-gap-item__progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 8px;
+}
+
+.skill-gap-item__progress-header span {
+  color: #7c8f98;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.skill-gap-item__progress-header strong {
+  color: #456873;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+/* ================================================================
+   GAP ITEM GAP INFO
+================================================================ */
+
+.skill-gap-item__gap {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 6px;
+}
+
+.skill-gap-item__gap > span {
+  color: #81929a;
+  font-size: 14px;
+  line-height: 1.3;
+
+  overflow-wrap: break-word;
+}
+
+/* ================================================================
+   GAP ITEM ACTION
+================================================================ */
+
+.skill-gap-item__action {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  border: 1px solid #dbe7eb;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #5d8291;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.skill-gap-item__action svg {
+  width: 16px;
+  height: 16px;
+
+  transition: transform 180ms ease;
+}
+
+.skill-gap-item__action:hover {
+  border-color: #afd1dc;
+
+  background: #f2f9fb;
+  color: #287b96;
+}
+
+.skill-gap-item__action:hover svg {
+  transform: translateX(2px);
+}
+
+/* ================================================================
+   BOTTOM MESSAGE
+================================================================ */
+
+.skill-gap-section__bottom-message {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 13px 15px;
+
+  border: 1px solid #e0ebef;
+  border-radius: 12px;
+
+  background: #f8fbfc;
+
+  box-sizing: border-box;
+}
+
+.skill-gap-section__bottom-message > div {
+  min-width: 0;
+  max-width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #718790;
+  font-size: 16px;
+  line-height: 1.45;
+
+  overflow-wrap: break-word;
+}
+
+.skill-gap-section__bottom-message > div svg {
+  flex: 0 0 auto;
+
+  width: 16px;
+  height: 16px;
+
+  color: #4f91a6;
+}
+
+.skill-gap-section__bottom-message button {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #267d98;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.skill-gap-section__bottom-message button svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ================================================================
+   1200px
+================================================================ */
+
+@media (max-width: 1200px) {
+  .skill-gap-section__top-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1.2fr);
+
+    gap: 16px;
+  }
+
+  .skill-gap-item {
+    grid-template-columns:
+      minmax(170px, 1.1fr)
+      minmax(115px, 0.7fr)
+      minmax(170px, 1.2fr)
+      minmax(110px, 0.7fr)
+      38px;
+
+    gap: 14px;
+  }
+
+  .skill-gap-summary-card__main {
+    gap: 14px;
+  }
+}
+
+/* ================================================================
+   1100px
+   IMPORTANT:
+   Sidebar reduces available dashboard width.
+   Cards stack instead of squeezing horizontally.
+================================================================ */
+
+@media (max-width: 1100px) {
+  .skill-gap-section__top-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 16px;
+  }
+
+  .skill-biggest-gap-card,
+  .skill-gap-summary-card {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: auto;
+  }
+
+  .skill-gap-summary-card__footer {
+    margin-top: 24px;
+  }
+
+  .skill-gap-item {
+    grid-template-columns:
+      minmax(180px, 1fr)
+      minmax(120px, 0.7fr)
+      minmax(180px, 1fr)
+      38px;
+  }
+
+  .skill-gap-item__gap {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .skill-gap-item__action {
+    grid-column: 4;
+    grid-row: 1;
+  }
+}
+
+/* ================================================================
+   900px
+================================================================ */
+
+/* ================================================================
+   900px
+   Stack skill-gap content earlier so Current / Target
+   never become squeezed on tablet and small screens.
+================================================================ */
+
+@media (max-width: 900px) {
+  .skill-gap-item {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      38px;
+
+    gap: 14px;
+
+    box-sizing: border-box;
+  }
+
+  /* --------------------------------------------------------------
+     Skill identity
+  -------------------------------------------------------------- */
+
+  .skill-gap-item__identity {
+    grid-column: 1;
+    grid-row: 1;
+
+    min-width: 0;
+  }
+
+  /* --------------------------------------------------------------
+     Action button
+  -------------------------------------------------------------- */
+
+  .skill-gap-item__action {
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-self: end;
+  }
+
+  /* --------------------------------------------------------------
+     Current / Target levels
+     Full width — this fixes the overlap.
+  -------------------------------------------------------------- */
+
+  .skill-gap-item__levels {
+    grid-column: 1 / 3;
+    grid-row: 2;
+
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 10px 0;
+
+    box-sizing: border-box;
+  }
+
+  .skill-gap-item__levels div {
+    min-width: 75px;
+  }
+
+  .skill-gap-item__levels > svg {
+    flex: 0 0 auto;
+  }
+
+  /* --------------------------------------------------------------
+     Progress
+  -------------------------------------------------------------- */
+
+  .skill-gap-item__progress {
+    grid-column: 1 / 3;
+    grid-row: 3;
+
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* --------------------------------------------------------------
+     Gap information
+  -------------------------------------------------------------- */
+
+  .skill-gap-item__gap {
+    grid-column: 1 / 3;
+    grid-row: 4;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10px;
+  }
+}
+
+/* ================================================================
+   700px
+================================================================ */
+
+@media (max-width: 700px) {
+  .skill-gap-section__header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 13px;
+  }
+
+  .skill-gap-section__view-all {
+    width: auto;
+  }
+
+  .skill-biggest-gap-card__title-row h3 {
+    font-size: 18px;
+  }
+
+  .skill-biggest-gap-card__description {
+    margin-top: 18px;
+    margin-bottom: 20px;
+  }
+
+  .skill-gap-summary-card__main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skill-gap-summary-card__stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skill-gap-summary-card__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .skill-gap-item {
+    grid-template-columns:
+      minmax(0, 1fr)
+      38px;
+
+    gap: 14px;
+  }
+
+  .skill-gap-item__identity {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .skill-gap-item__action {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .skill-gap-item__levels {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  .skill-gap-item__progress {
+    grid-column: 1 / 3;
+    grid-row: 3;
+  }
+
+  .skill-gap-item__gap {
+    grid-column: 1 / 3;
+    grid-row: 4;
+
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .skill-gap-section__bottom-message {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ================================================================
+   520px
+================================================================ */
+
+@media (max-width: 520px) {
+  .skill-gap-section {
+    gap: 15px;
+  }
+
+  .skill-gap-section__title {
+    font-size: 19px;
+  }
+
+  .skill-gap-section__description {
+    font-size: 16px;
+  }
+
+  .skill-gap-section__view-all {
+    width: 100%;
+  }
+
+  .skill-biggest-gap-card__top {
+    gap: 10px;
+  }
+
+  .skill-biggest-gap-card__alert-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .skill-biggest-gap-card__levels {
+    gap: 13px;
+  }
+
+  .skill-biggest-gap-card__level span {
+    font-size: 14px;
+  }
+
+  .skill-biggest-gap-card__level strong {
+    font-size: 17px;
+  }
+
+  .skill-biggest-gap-card__progress-header span {
+    font-size: 14px;
+  }
+
+  .skill-gap-summary-card__score strong {
+    font-size: 36px;
+  }
+
+  .skill-gap-list-card__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .skill-gap-item__identity-text h4 {
+    white-space: normal;
+  }
+
+  .skill-gap-section__bottom-message > div {
+    align-items: flex-start;
+  }
+}
+
+/* ================================================================
+   400px
+================================================================ */
+
+@media (max-width: 400px) {
+  .skill-biggest-gap-card__title-row {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .skill-biggest-gap-card__description {
+    font-size: 16px;
+  }
+
+  .skill-biggest-gap-card__action {
+    width: 100%;
+  }
+
+  .skill-gap-item {
+    padding: 13px;
+  }
+
+  .skill-gap-item__levels {
+    justify-content: space-between;
+  }
+
+  .skill-gap-item__levels > svg {
+    margin: 0 5px;
+  }
+
+  .skill-gap-section__bottom-message > div {
+    align-items: flex-start;
+  }
+
+  .skill-gap-section__bottom-message button {
+    width: 100%;
+
+    justify-content: center;
+
+    min-height: 36px;
+    padding: 7px;
+
+    border: 1px solid #d7e5e9;
+    border-radius: 9px;
+
+    background: #ffffff;
+  }
+}
+
+/* ================================================================
+   ACCESSIBILITY
+================================================================ */
+
+.skill-gap-section__view-all:focus-visible,
+.skill-biggest-gap-card__action:focus-visible,
+.skill-gap-summary-card__footer-action:focus-visible,
+.skill-gap-item__action:focus-visible,
+.skill-gap-section__bottom-message button:focus-visible {
+  outline: 3px solid rgba(39, 153, 194, 0.2);
+  outline-offset: 3px;
+}
+
+/* ================================================================
+   REDUCED MOTION
+================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-gap-section__view-all,
+  .skill-gap-section__view-all svg,
+  .skill-biggest-gap-card__action,
+  .skill-biggest-gap-card__action svg,
+  .skill-gap-item,
+  .skill-gap-item__action,
+  .skill-gap-item__action svg {
+    transition: none;
+  }
+}

@@ -1,0 +1,745 @@
+/* =========================================================
+   ROOT
+========================================================= */
+
+.cc-avatar {
+  --avatar-size: 44px;
+  --avatar-background: #eef2f7;
+  --avatar-text-color: #172033;
+
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+
+  color: var(--avatar-text-color);
+
+  user-select: none;
+  vertical-align: middle;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.cc-avatar-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: var(--avatar-background);
+
+  color: var(--avatar-text-color);
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+/* =========================================================
+   SHAPES
+========================================================= */
+
+.cc-avatar-shape-circle,
+.cc-avatar-shape-circle .cc-avatar-inner {
+  border-radius: 50%;
+}
+
+.cc-avatar-shape-rounded,
+.cc-avatar-shape-rounded .cc-avatar-inner {
+  border-radius: 18px;
+}
+
+.cc-avatar-shape-square,
+.cc-avatar-shape-square .cc-avatar-inner {
+  border-radius: 8px;
+}
+
+/* =========================================================
+   SIZES
+========================================================= */
+
+.cc-avatar-size-xs {
+  --avatar-size: 28px;
+  font-size: 10px;
+}
+
+.cc-avatar-size-sm {
+  --avatar-size: 36px;
+  font-size: 12px;
+}
+
+.cc-avatar-size-md {
+  --avatar-size: 44px;
+  font-size: 14px;
+}
+
+.cc-avatar-size-lg {
+  --avatar-size: 56px;
+  font-size: 17px;
+}
+
+.cc-avatar-size-xl {
+  --avatar-size: 72px;
+  font-size: 21px;
+}
+
+.cc-avatar-size-2xl {
+  --avatar-size: 96px;
+  font-size: 28px;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.cc-avatar img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: var(--avatar-object-fit);
+
+  transition: transform 0.45s ease;
+}
+
+.cc-avatar-clickable:hover img {
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   DEFAULT
+========================================================= */
+
+.cc-avatar-variant-default .cc-avatar-inner {
+  background: linear-gradient(145deg, #f7f9fc, #e5eaf1);
+
+  color: #263247;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   SOFT
+========================================================= */
+
+.cc-avatar-variant-soft .cc-avatar-inner {
+  background: linear-gradient(145deg, #eef4ff, #e8edf8);
+
+  color: #315ca8;
+}
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.cc-avatar-variant-glass .cc-avatar-inner {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.24)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+    0 12px 30px rgba(31, 41, 55, 0.12);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* =========================================================
+   DARK GLASS
+========================================================= */
+
+.cc-avatar-variant-dark-glass .cc-avatar-inner {
+  background: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.88),
+    rgba(31, 41, 55, 0.62)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  color: #ffffff;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 14px 35px rgba(15, 23, 42, 0.22);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* =========================================================
+   GRADIENT
+========================================================= */
+
+.cc-avatar-variant-gradient .cc-avatar-inner {
+  background: linear-gradient(135deg, #334155, #64748b);
+
+  color: #ffffff;
+
+  box-shadow: 0 10px 24px rgba(51, 65, 85, 0.25);
+}
+
+/* =========================================================
+   PREMIUM
+========================================================= */
+
+.cc-avatar-variant-premium .cc-avatar-inner {
+  background: linear-gradient(145deg, #111827, #263449);
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 12px 28px rgba(15, 23, 42, 0.28);
+}
+
+/* =========================================================
+   OUTLINE
+========================================================= */
+
+.cc-avatar-variant-outline .cc-avatar-inner {
+  background: transparent;
+
+  border: 2px solid currentColor;
+}
+
+/* =========================================================
+   MINIMAL
+========================================================= */
+
+.cc-avatar-variant-minimal .cc-avatar-inner {
+  background: #f3f4f6;
+
+  color: #4b5563;
+
+  box-shadow: none;
+}
+
+/* =========================================================
+   INITIALS
+========================================================= */
+
+.cc-avatar-initials {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.cc-avatar-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.cc-avatar-icon svg {
+  width: 45%;
+  height: 45%;
+}
+
+/* =========================================================
+   BORDER
+========================================================= */
+
+.cc-avatar-bordered .cc-avatar-inner {
+  border: 2px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================
+   RING
+========================================================= */
+
+.cc-avatar-ring {
+  padding: 3px;
+
+  border-radius: inherit;
+
+  background: linear-gradient(135deg, #64748b, #cbd5e1, #475569);
+}
+
+.cc-avatar-ring .cc-avatar-inner {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   SHADOW
+========================================================= */
+
+.cc-avatar-shadow .cc-avatar-inner {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.cc-avatar-clickable {
+  cursor: pointer;
+}
+
+.cc-avatar-clickable:hover .cc-avatar-inner {
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
+}
+
+.cc-avatar-clickable:active .cc-avatar-inner {
+  transform: translateY(0) scale(0.97);
+}
+
+.cc-avatar-clickable:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.3);
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.cc-avatar-disabled {
+  opacity: 0.48;
+
+  cursor: not-allowed;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.cc-avatar-status {
+  position: absolute;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 11px;
+  height: 11px;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+
+  box-sizing: content-box;
+}
+
+/* STATUS POSITIONS */
+
+.cc-avatar-status-bottom-right {
+  right: 0;
+  bottom: 0;
+}
+
+.cc-avatar-status-bottom-left {
+  left: 0;
+  bottom: 0;
+}
+
+.cc-avatar-status-top-right {
+  right: 0;
+  top: 0;
+}
+
+.cc-avatar-status-top-left {
+  left: 0;
+  top: 0;
+}
+
+/* STATUS COLORS */
+
+.cc-avatar-status-online {
+  background: #22c55e;
+}
+
+.cc-avatar-status-away {
+  background: #f59e0b;
+}
+
+.cc-avatar-status-busy {
+  background: #ef4444;
+}
+
+.cc-avatar-status-offline {
+  background: #94a3b8;
+}
+
+.cc-avatar-status svg {
+  width: 7px;
+  height: 7px;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   STATUS SIZE ADJUSTMENTS
+========================================================= */
+
+.cc-avatar-size-xs .cc-avatar-status {
+  width: 7px;
+  height: 7px;
+
+  border-width: 1.5px;
+}
+
+.cc-avatar-size-sm .cc-avatar-status {
+  width: 8px;
+  height: 8px;
+
+  border-width: 1.5px;
+}
+
+.cc-avatar-size-lg .cc-avatar-status {
+  width: 13px;
+  height: 13px;
+}
+
+.cc-avatar-size-xl .cc-avatar-status {
+  width: 15px;
+  height: 15px;
+}
+
+.cc-avatar-size-2xl .cc-avatar-status {
+  width: 17px;
+  height: 17px;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.cc-avatar-loading .cc-avatar-inner {
+  overflow: hidden;
+
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+
+  background-size: 200% 100%;
+
+  animation: avatar-shimmer 1.4s infinite linear;
+}
+
+.cc-avatar-loader {
+  width: 32%;
+  height: 32%;
+
+  border: 2px solid rgba(100, 116, 139, 0.25);
+
+  border-top-color: #475569;
+
+  border-radius: 50%;
+
+  animation: avatar-spin 0.75s linear infinite;
+}
+
+.cc-avatar-image-loader {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  background: linear-gradient(
+    90deg,
+    rgba(226, 232, 240, 0.8),
+    rgba(248, 250, 252, 0.9),
+    rgba(226, 232, 240, 0.8)
+  );
+
+  background-size: 200% 100%;
+
+  animation: avatar-shimmer 1.2s infinite linear;
+}
+
+@keyframes avatar-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes avatar-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+.cc-avatar-tooltip-wrapper {
+  position: relative;
+
+  display: inline-flex;
+}
+
+.cc-avatar-tooltip {
+  position: absolute;
+
+  left: 50%;
+  bottom: calc(100% + 9px);
+
+  transform: translateX(-50%) translateY(4px);
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cc-avatar-tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 100%;
+
+  transform: translateX(-50%);
+
+  border: 5px solid transparent;
+
+  border-top-color: #111827;
+}
+
+.cc-avatar-tooltip-wrapper:hover .cc-avatar-tooltip {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================================================
+   AVATAR WITH INFO
+========================================================= */
+
+.cc-avatar-with-info {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.cc-avatar-info {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 2px;
+}
+
+.cc-avatar-info strong {
+  color: #172033;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.cc-avatar-info span {
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.3;
+}
+
+.cc-avatar-info small {
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   AVATAR GROUP
+========================================================= */
+
+.cc-avatar-group {
+  display: inline-flex;
+
+  align-items: center;
+}
+
+.cc-avatar-group-overlap .cc-avatar {
+  margin-left: -10px;
+}
+
+.cc-avatar-group-overlap .cc-avatar:first-child {
+  margin-left: 0;
+}
+
+.cc-avatar-group .cc-avatar {
+  border-radius: 50%;
+}
+
+.cc-avatar-group .cc-avatar:hover {
+  z-index: 20;
+}
+
+/* =========================================================
+   OVERFLOW
+========================================================= */
+
+.cc-avatar-overflow .cc-avatar-inner {
+  background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+
+  color: #475569;
+
+  border: 2px solid #ffffff;
+}
+
+.cc-avatar-overflow-count {
+  font-size: inherit;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   AVATAR STACK
+========================================================= */
+
+.cc-avatar-stack {
+  display: inline-flex;
+
+  align-items: center;
+}
+
+.cc-avatar-stack .cc-avatar {
+  margin-left: -9px;
+
+  transition: transform 0.2s ease;
+}
+
+.cc-avatar-stack .cc-avatar:first-child {
+  margin-left: 0;
+}
+
+.cc-avatar-stack .cc-avatar:hover {
+  z-index: 20;
+
+  transform: translateY(-3px);
+}
+
+.cc-avatar-stack-more {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  margin-left: -9px;
+
+  border-radius: 50%;
+
+  background: #e2e8f0;
+
+  color: #475569;
+
+  border: 2px solid #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 640px) {
+  .cc-avatar-size-2xl {
+    --avatar-size: 82px;
+  }
+
+  .cc-avatar-tooltip {
+    display: none;
+  }
+}

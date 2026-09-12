@@ -1,0 +1,698 @@
+/* =========================================================
+   CAPACITY CONNECT
+   LEARNER SIDEBAR
+========================================================= */
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.learner-sidebar {
+  width: 260px;
+  height: 100vh;
+
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-right: 1px solid #dce5ec;
+
+  box-sizing: border-box;
+
+  position: sticky;
+  top: 0;
+
+  overflow: hidden;
+
+  z-index: 100;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.sidebar-brand {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 22px 20px;
+
+  box-sizing: border-box;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.sidebar-logo {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #35bee2;
+
+  border-radius: 10px;
+
+  color: #061f35;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+
+  box-shadow: 0 4px 12px rgba(53, 190, 226, 0.2);
+}
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.sidebar-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.brand-title {
+  color: #061f35;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.2px;
+}
+
+.brand-subtitle {
+  margin-top: 2px;
+
+  color: #1682a8;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.4px;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-navigation {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+
+  padding: 4px 14px 18px;
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar-navigation::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-navigation::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-navigation::-webkit-scrollbar-thumb {
+  background: #d3e0e8;
+
+  border-radius: 10px;
+}
+
+/* Firefox */
+
+.sidebar-navigation {
+  scrollbar-width: thin;
+  scrollbar-color: #d3e0e8 transparent;
+}
+
+/* =========================================================
+   NAVIGATION GROUP
+========================================================= */
+
+.sidebar-group {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+/* =========================================================
+   GROUP TITLE
+========================================================= */
+
+.sidebar-group-title {
+  padding: 0 10px;
+
+  color: #7895a9;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  letter-spacing: 1.1px;
+
+  user-select: none;
+}
+
+/* =========================================================
+   GROUP ITEMS
+========================================================= */
+
+.sidebar-group-items {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+/* =========================================================
+   NAVIGATION ITEM
+========================================================= */
+
+.sidebar-nav-item {
+  width: 100%;
+  min-height: 44px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  color: #526d80;
+
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* =========================================================
+   NAVIGATION ICON
+========================================================= */
+
+.sidebar-nav-icon {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #71899a;
+
+  font-size: 18px;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.sidebar-nav-icon svg {
+  width: 18px;
+  height: 18px;
+
+  stroke-width: 1.9;
+}
+
+/* =========================================================
+   NAVIGATION LABEL
+========================================================= */
+
+.sidebar-nav-label {
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.5;
+
+  transition:
+    opacity 180ms ease,
+    color 180ms ease;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.sidebar-nav-item:hover {
+  color: #0b6d91;
+
+  background: #eef8fb;
+}
+
+.sidebar-nav-item:hover .sidebar-nav-icon {
+  color: #1682a8;
+
+  transform: translateX(1px);
+}
+
+/* =========================================================
+   ACTIVE NAVIGATION ITEM
+========================================================= */
+
+.sidebar-nav-item.active {
+  color: #08799d;
+
+  background: #e3f6fb;
+
+  font-weight: 650;
+
+  box-shadow: inset 3px 0 0 #35bee2;
+}
+
+.sidebar-nav-item.active .sidebar-nav-icon {
+  color: #0b8caf;
+}
+
+/* =========================================================
+   ACTIVE HOVER
+========================================================= */
+
+.sidebar-nav-item.active:hover {
+  background: #dff4fa;
+}
+
+/* =========================================================
+   BOTTOM SECTION
+   Dark theme only for Profile / Settings / Logout
+========================================================= */
+
+.sidebar-bottom {
+  width: 100%;
+
+  flex-shrink: 0;
+
+  background: #061f35;
+
+  border-top: 1px solid #dce5ec;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   BOTTOM LINKS
+========================================================= */
+
+.sidebar-bottom-links {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  padding: 10px 14px 12px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   BOTTOM ITEM
+========================================================= */
+
+.sidebar-bottom-item {
+  width: 100%;
+  min-height: 42px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #a9bdcc;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+/* =========================================================
+   BOTTOM ICON
+========================================================= */
+
+.sidebar-bottom-item .sidebar-nav-icon {
+  color: #7895a9;
+}
+
+.sidebar-bottom-item .sidebar-nav-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================================
+   BOTTOM HOVER
+========================================================= */
+
+.sidebar-bottom-item:hover {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-bottom-item:hover .sidebar-nav-icon {
+  color: #69d4ed;
+
+  transform: translateX(1px);
+}
+
+/* =========================================================
+   BOTTOM ACTIVE
+========================================================= */
+
+.sidebar-bottom-item.active {
+  color: #ffffff;
+
+  background: rgba(53, 190, 226, 0.16);
+
+  box-shadow: inset 3px 0 0 #35bee2;
+}
+
+.sidebar-bottom-item.active .sidebar-nav-icon {
+  color: #69d4ed;
+}
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.sidebar-logout {
+  margin-top: 2px;
+}
+
+.sidebar-logout:hover {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-logout .sidebar-nav-icon {
+  color: #9bb0bf;
+}
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+.sidebar-nav-item:focus-visible,
+.sidebar-bottom-item:focus-visible {
+  outline: 2px solid #35bee2;
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .learner-sidebar {
+    width: 78px;
+  }
+
+  /* -------------------------------------------------------
+     Brand
+  ------------------------------------------------------- */
+
+  .sidebar-brand {
+    justify-content: center;
+
+    padding: 20px 10px;
+  }
+
+  .sidebar-brand-text {
+    display: none;
+  }
+
+  /* -------------------------------------------------------
+     Navigation
+  ------------------------------------------------------- */
+
+  .sidebar-navigation {
+    padding: 4px 10px 14px;
+
+    gap: 20px;
+  }
+
+  .sidebar-group-title {
+    display: none;
+  }
+
+  .sidebar-group {
+    gap: 0;
+  }
+
+  .sidebar-group-items {
+    gap: 5px;
+  }
+
+  /* -------------------------------------------------------
+     Navigation Item
+  ------------------------------------------------------- */
+
+  .sidebar-nav-item {
+    min-height: 44px;
+
+    justify-content: center;
+
+    padding: 0;
+
+    gap: 0;
+  }
+
+  .sidebar-nav-label {
+    display: none;
+  }
+
+  .sidebar-nav-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* -------------------------------------------------------
+     Bottom
+  ------------------------------------------------------- */
+
+  .sidebar-bottom-links {
+    padding: 10px 10px 12px;
+  }
+
+  .sidebar-bottom-item {
+    min-height: 44px;
+
+    justify-content: center;
+
+    padding: 0;
+
+    gap: 0;
+  }
+
+  .sidebar-bottom-item .sidebar-nav-label {
+    display: none;
+  }
+}
+
+/* =========================================================
+   PROFESSIONAL TOOLTIP
+   Appears only when sidebar is collapsed
+========================================================= */
+
+@media (max-width: 900px) {
+  .sidebar-nav-item::after,
+  .sidebar-bottom-item::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+
+    left: calc(100% + 12px);
+    top: 50%;
+
+    transform: translateY(-50%) translateX(-4px);
+
+    padding: 8px 11px;
+
+    background: #061f35;
+
+    color: #ffffff;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 1000;
+
+    box-shadow: 0 8px 22px rgba(6, 31, 53, 0.2);
+
+    transition:
+      opacity 150ms ease,
+      transform 150ms ease,
+      visibility 150ms ease;
+  }
+
+  .sidebar-nav-item:hover::after,
+  .sidebar-bottom-item:hover::after {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .learner-sidebar {
+    width: 68px;
+  }
+
+  .sidebar-brand {
+    padding: 18px 8px;
+  }
+
+  .sidebar-logo {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+  }
+
+  .sidebar-navigation {
+    padding-left: 8px;
+    padding-right: 8px;
+
+    gap: 17px;
+  }
+
+  .sidebar-bottom-links {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .learner-sidebar {
+    width: 64px;
+  }
+
+  .sidebar-brand {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .sidebar-logo {
+    width: 38px;
+    height: 38px;
+
+    font-size: 14px;
+  }
+
+  .sidebar-navigation {
+    padding-left: 7px;
+    padding-right: 7px;
+
+    gap: 15px;
+  }
+
+  .sidebar-bottom-links {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}

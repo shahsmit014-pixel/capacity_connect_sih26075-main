@@ -1,0 +1,247 @@
+/* =========================================================
+   CAPACITY CONNECT
+   LEARNER DASHBOARD
+
+   Dashboard-level layout only.
+
+   Individual components manage their own
+   internal styling.
+
+   Components:
+   - WelcomeBanner
+   - StatCard
+   - LearningProgress
+========================================================= */
+
+/* =========================================================
+   DASHBOARD CONTAINER
+========================================================= */
+
+.learner-dashboard {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   DIRECT CHILD COMPONENTS
+========================================================= */
+
+.learner-dashboard > * {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   STATISTICS SECTION
+========================================================= */
+
+.dashboard-stats-section {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.dashboard-section-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION EYEBROW
+========================================================= */
+
+.dashboard-section-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6c8290;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.dashboard-section-title {
+  margin: 0;
+
+  color: #17384a;
+
+  font-size: 21px;
+  font-weight: 750;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.025em;
+}
+
+/* =========================================================
+   STATISTICS GRID
+========================================================= */
+
+.dashboard-stats {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   STAT CARD SAFETY
+
+   Prevents cards from forcing the dashboard
+   wider than the available area.
+========================================================= */
+
+.dashboard-stats > * {
+  min-width: 0;
+}
+
+/* =========================================================
+   LARGE LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+  .learner-dashboard {
+    gap: 25px;
+  }
+
+  .dashboard-stats {
+    gap: 15px;
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1000px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .learner-dashboard {
+    gap: 24px;
+  }
+
+  .dashboard-section-title {
+    font-size: 20px;
+  }
+
+  .dashboard-stats {
+    gap: 14px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .learner-dashboard {
+    gap: 22px;
+  }
+
+  .dashboard-stats-section {
+    gap: 14px;
+  }
+
+  .dashboard-section-header {
+    align-items: flex-start;
+  }
+
+  .dashboard-section-eyebrow {
+    font-size: 9px;
+  }
+
+  .dashboard-section-title {
+    font-size: 18px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .learner-dashboard {
+    gap: 20px;
+  }
+
+  .dashboard-section-title {
+    font-size: 17px;
+  }
+
+  .dashboard-stats {
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+  .learner-dashboard {
+    gap: 18px;
+  }
+
+  .dashboard-section-title {
+    font-size: 16px;
+  }
+}

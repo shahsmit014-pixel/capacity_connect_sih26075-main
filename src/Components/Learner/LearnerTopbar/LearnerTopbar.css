@@ -1,0 +1,982 @@
+/* =========================================================
+   CAPACITY CONNECT
+   LEARNER TOPBAR
+========================================================= */
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.learner-topbar {
+  width: 100%;
+  height: 80px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+
+  padding: 0 28px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #dce5ec;
+
+  /*
+     Sticky keeps the topbar at the top while scrolling,
+     but keeps it inside learner-main.
+
+     This prevents the topbar from covering the sidebar.
+  */
+  position: sticky;
+  top: 0;
+
+  z-index: 50;
+}
+
+/* =========================================================
+   SEARCH WRAPPER
+========================================================= */
+
+.topbar-search-wrapper {
+  width: 100%;
+
+  max-width: 620px;
+
+  min-width: 0;
+
+  flex: 1 1 auto;
+
+  position: relative;
+
+  z-index: 60;
+}
+
+/* =========================================================
+   SEARCHBAR
+   Override only the SearchBar used inside Topbar
+========================================================= */
+
+.topbar-search-wrapper .searchbar {
+  width: 100%;
+}
+
+/* Main search field */
+
+.topbar-search-wrapper .searchbar-main {
+  max-height: 44px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+}
+
+/* Search input */
+
+.topbar-search-wrapper .searchbar-main input {
+  font-size: 13px;
+}
+
+/* Search icon area */
+
+.topbar-search-wrapper .searchbar-icon {
+  width: 46px;
+}
+
+/* Search icon */
+
+.topbar-search-wrapper .searchbar-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.topbar-search-wrapper .searchbar-clear {
+  width: 34px;
+  height: 34px;
+
+  margin-right: 5px;
+
+  border-radius: 8px;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.topbar-search-wrapper .searchbar-clear:hover {
+  background: #eaf5f8;
+
+  color: #08799d;
+
+  transform: rotate(90deg);
+}
+
+.topbar-search-wrapper .searchbar-clear svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* =========================================================
+   TOPBAR ACTIONS
+========================================================= */
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  /*
+     THIS IS THE IMPORTANT FIX.
+
+     It pushes all four functions to the far right.
+  */
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   GENERIC ICON BUTTON
+========================================================= */
+
+.topbar-icon-button {
+  width: 46px;
+  height: 46px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dce5ec;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  color: #607b8e;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.topbar-icon-button svg {
+  width: 20px;
+  height: 20px;
+
+  stroke-width: 1.9;
+}
+
+/* =========================================================
+   ICON BUTTON HOVER
+========================================================= */
+
+.topbar-icon-button:hover {
+  background: #eef8fb;
+
+  border-color: #b9dfe9;
+
+  color: #0b789b;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 18px rgba(6, 31, 53, 0.08);
+}
+
+/* =========================================================
+   ICON BUTTON ACTIVE
+========================================================= */
+
+.topbar-icon-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   LEARNING PROGRESS
+========================================================= */
+
+.topbar-learning-progress {
+  height: 52px;
+
+  min-width: 155px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  background: #f7fafc;
+
+  border: 1px solid #dce5ec;
+
+  border-radius: 12px;
+
+  cursor: default;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+/* =========================================================
+   PROGRESS HOVER
+========================================================= */
+
+.topbar-learning-progress:hover {
+  background: #f1f9fc;
+
+  border-color: #c4e2eb;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 17px rgba(6, 31, 53, 0.06);
+}
+
+/* =========================================================
+   PROGRESS CIRCLE
+========================================================= */
+
+.topbar-progress-circle {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 3px solid #35bee2;
+
+  box-sizing: border-box;
+}
+
+/* Inner ring */
+
+.topbar-progress-circle::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 3px;
+
+  border-radius: 50%;
+
+  border: 1px solid #dceff4;
+
+  pointer-events: none;
+}
+
+/* Percentage */
+
+.topbar-progress-circle span {
+  position: relative;
+
+  z-index: 1;
+
+  color: #08799d;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   PROGRESS INFO
+========================================================= */
+
+.topbar-progress-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.topbar-progress-label {
+  color: #7895a9;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  line-height: 1.3;
+}
+
+.topbar-progress-value {
+  color: #354052;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.topbar-notification-button {
+  position: relative;
+}
+
+/* =========================================================
+   NOTIFICATION BADGE
+========================================================= */
+
+.topbar-notification-badge {
+  position: absolute;
+
+  top: 5px;
+  right: 5px;
+
+  min-width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 3px;
+
+  box-sizing: border-box;
+
+  background: #1682a8;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.topbar-profile {
+  width: 164px;
+  height: 52px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  padding: 5px 11px 5px 6px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dce5ec;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #354052;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+/* =========================================================
+   PROFILE HOVER
+========================================================= */
+
+.topbar-profile:hover {
+  background: #f7fbfd;
+
+  border-color: #bddde6;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 7px 18px rgba(6, 31, 53, 0.07);
+}
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.topbar-avatar {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dff4fa;
+
+  border: 1px solid #b8e2ed;
+
+  color: #08799d;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PROFILE INFO
+========================================================= */
+
+.topbar-profile-info {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 3px;
+}
+
+.topbar-profile-name {
+  max-width: 85px;
+
+  overflow: hidden;
+
+  color: #263c4d;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.topbar-profile-role {
+  color: #7895a9;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1.25;
+}
+
+/* =========================================================
+   PROFILE ARROW
+========================================================= */
+
+.topbar-profile-arrow {
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
+
+  color: #7895a9;
+
+  stroke-width: 2;
+}
+
+/* =========================================================
+   DARK PROFESSIONAL TOOLTIPS
+========================================================= */
+
+.topbar-icon-button::after,
+.topbar-learning-progress::after,
+.topbar-profile::after {
+  content: attr(data-tooltip);
+
+  position: absolute;
+
+  top: calc(100% + 11px);
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-5px);
+
+  width: max-content;
+  max-width: 220px;
+
+  padding: 9px 12px;
+
+  box-sizing: border-box;
+
+  background: #061f35;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 500;
+
+  box-shadow: 0 9px 24px rgba(6, 31, 53, 0.2);
+
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    visibility 150ms ease;
+}
+
+/* =========================================================
+   TOOLTIP SHOW
+========================================================= */
+
+.topbar-icon-button:hover::after,
+.topbar-learning-progress:hover::after,
+.topbar-profile:hover::after {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================================================
+   TOOLTIP ARROW
+========================================================= */
+
+.topbar-icon-button::before,
+.topbar-learning-progress::before,
+.topbar-profile::before {
+  content: "";
+
+  position: absolute;
+
+  top: calc(100% + 6px);
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  background: #061f35;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  transform: translateX(-50%) rotate(45deg);
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 501;
+
+  transition:
+    opacity 150ms ease,
+    visibility 150ms ease;
+}
+
+/* =========================================================
+   TOOLTIP ARROW SHOW
+========================================================= */
+
+.topbar-icon-button:hover::before,
+.topbar-learning-progress:hover::before,
+.topbar-profile:hover::before {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.topbar-icon-button:focus-visible,
+.topbar-profile:focus-visible {
+  outline: 2px solid #35bee2;
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+  .learner-topbar {
+    height: 78px;
+
+    padding-left: 22px;
+    padding-right: 22px;
+
+    gap: 20px;
+  }
+
+  .topbar-search-wrapper {
+    max-width: 500px;
+  }
+
+  .topbar-actions {
+    gap: 9px;
+  }
+
+  .topbar-learning-progress {
+    min-width: 52px;
+
+    width: 52px;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .topbar-progress-info {
+    display: none;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+  .learner-topbar {
+    height: 74px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+
+    gap: 14px;
+  }
+
+  .topbar-search-wrapper {
+    max-width: none;
+
+    flex: 1 1 auto;
+  }
+
+  .topbar-search-wrapper .searchbar-main {
+    min-height: 44px;
+  }
+
+  .topbar-actions {
+    gap: 7px;
+  }
+
+  .topbar-icon-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .topbar-learning-progress {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    border-radius: 10px;
+  }
+
+  .topbar-progress-circle {
+    width: 31px;
+    height: 31px;
+
+    border-width: 2px;
+  }
+
+  .topbar-progress-circle::after {
+    inset: 2px;
+  }
+
+  .topbar-profile {
+    width: 44px;
+    height: 44px;
+
+    padding: 2px;
+
+    justify-content: center;
+
+    border-radius: 10px;
+  }
+
+  .topbar-profile-info,
+  .topbar-profile-arrow {
+    display: none;
+  }
+
+  .topbar-avatar {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .learner-topbar {
+    height: 68px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+
+    gap: 8px;
+  }
+
+  .topbar-actions {
+    gap: 5px;
+  }
+
+  .topbar-search-wrapper .searchbar-main {
+    min-height: 40px;
+
+    border-radius: 10px;
+  }
+
+  .topbar-search-wrapper .searchbar-main input {
+    font-size: 12px;
+  }
+
+  .topbar-search-wrapper .searchbar-main input::placeholder {
+    font-size: 11px;
+  }
+
+  .topbar-search-wrapper .searchbar-icon {
+    width: 40px;
+  }
+
+  .topbar-search-wrapper .searchbar-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .topbar-search-wrapper .searchbar-clear {
+    width: 30px;
+    height: 30px;
+
+    margin-right: 4px;
+  }
+
+  .topbar-icon-button {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 9px;
+  }
+
+  .topbar-icon-button svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .topbar-learning-progress {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    border-radius: 9px;
+  }
+
+  .topbar-progress-circle {
+    width: 27px;
+    height: 27px;
+  }
+
+  .topbar-progress-circle span {
+    font-size: 8px;
+  }
+
+  .topbar-profile {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 9px;
+  }
+
+  .topbar-avatar {
+    width: 31px;
+    height: 31px;
+
+    font-size: 11px;
+  }
+
+  .topbar-notification-badge {
+    top: 3px;
+    right: 3px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .learner-topbar {
+    padding-left: 8px;
+    padding-right: 8px;
+
+    gap: 6px;
+  }
+
+  .topbar-actions {
+    gap: 4px;
+  }
+
+  .topbar-search-wrapper .searchbar-main {
+    min-height: 38px;
+  }
+
+  .topbar-search-wrapper .searchbar-main input {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    font-size: 11px;
+  }
+
+  .topbar-search-wrapper .searchbar-main input::placeholder {
+    font-size: 10px;
+  }
+
+  .topbar-search-wrapper .searchbar-icon {
+    width: 36px;
+  }
+
+  .topbar-search-wrapper .searchbar-clear {
+    width: 28px;
+    height: 28px;
+  }
+
+  .topbar-icon-button,
+  .topbar-learning-progress,
+  .topbar-profile {
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+  }
+
+  .topbar-progress-circle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .topbar-avatar {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+  .learner-topbar {
+    padding-left: 6px;
+    padding-right: 6px;
+
+    gap: 5px;
+  }
+
+  .topbar-actions {
+    gap: 3px;
+  }
+
+  .topbar-icon-button,
+  .topbar-learning-progress,
+  .topbar-profile {
+    width: 33px;
+    height: 33px;
+
+    min-width: 33px;
+  }
+
+  .topbar-progress-circle {
+    width: 23px;
+    height: 23px;
+  }
+
+  .topbar-avatar {
+    width: 27px;
+    height: 27px;
+
+    font-size: 10px;
+  }
+
+  .topbar-search-wrapper .searchbar-main input::placeholder {
+    font-size: 9px;
+  }
+}
