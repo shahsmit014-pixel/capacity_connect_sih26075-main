@@ -16,7 +16,7 @@ import {
 } from 'react-icons/fi';
 import { StatCard, ProgressBar, Modal } from './CommonComponents';
 import { MONTHLY_USER_GROWTH } from './mockData';
-import { userService, courseService, trainingService, knowledgeService } from '../services/api';
+import { userService, courseService, trainingService, knowledgeService } from './servicesApi';
 
 export default function AdminDashboard({ onNavigate }) {
   const [modalType, setModalType] = useState(null); // 'user', 'course', 'training', 'resource'

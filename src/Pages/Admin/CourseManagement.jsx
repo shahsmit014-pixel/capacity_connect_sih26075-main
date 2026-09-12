@@ -19,7 +19,7 @@ import {
   FiRefreshCw
 } from 'react-icons/fi';
 import { StatCard, StatusBadge, Pagination, Modal, EmptyState } from './CommonComponents';
-import { courseService } from '../services/api';
+import { courseService } from './servicesApi';
 
 export default function CourseManagement({ onNavigate, onSelectCourse }) {
   const [courses, setCourses] = useState([]);

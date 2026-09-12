@@ -14,7 +14,7 @@ import {
   FiRefreshCw
 } from 'react-icons/fi';
 import { StatCard, StatusBadge, ProgressBar, Pagination, Modal, EmptyState } from './CommonComponents';
-import { trainingService } from '../services/api';
+import { trainingService } from './servicesApi';
 
 export default function TrainingPrograms() {
   const [programs, setPrograms] = useState([]);

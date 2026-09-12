@@ -15,7 +15,7 @@ import {
   FiRefreshCw
 } from 'react-icons/fi';
 import { StatCard, Pagination, Modal, EmptyState } from './CommonComponents';
-import { knowledgeService } from '../services/api';
+import { knowledgeService } from './servicesApi';
 
 export default function KnowledgeHub() {
   const [resources, setResources] = useState([]);

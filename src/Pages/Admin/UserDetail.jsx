@@ -17,7 +17,7 @@ import {
   FiActivity
 } from 'react-icons/fi';
 import { StatusBadge, ProgressBar, Modal } from './CommonComponents';
-import { userService } from '../services/api';
+import { userService } from './servicesApi';
 
 export default function UserDetail({ userId = 'usr-101', onNavigate, onBack }) {
   const [user, setUser] = useState(null);

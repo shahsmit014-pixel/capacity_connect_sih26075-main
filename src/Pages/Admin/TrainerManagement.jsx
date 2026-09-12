@@ -14,7 +14,7 @@ import {
   FiRefreshCw
 } from 'react-icons/fi';
 import { StatCard, StatusBadge, Pagination, Modal, EmptyState } from './CommonComponents';
-import { userService } from '../services/api';
+import { userService } from './servicesApi';
 
 export default function TrainerManagement({ onNavigate, onSelectUser }) {
   const [trainers, setTrainers] = useState([]);

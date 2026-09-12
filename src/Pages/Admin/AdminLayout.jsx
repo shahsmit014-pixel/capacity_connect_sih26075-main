@@ -23,7 +23,7 @@ import {
   FiShield,
   FiDatabase
 } from 'react-icons/fi';
-import { getBackendConfig } from '../services/api';
+import { getBackendConfig } from './servicesApi';
 
 export const MENU_ITEMS = [
   { id: 'dashboard', label: 'Dashboard', path: '/admin', icon: FiGrid },

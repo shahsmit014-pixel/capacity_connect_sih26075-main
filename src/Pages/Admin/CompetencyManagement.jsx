@@ -13,7 +13,7 @@ import {
   FiRefreshCw
 } from 'react-icons/fi';
 import { StatCard, StatusBadge, Pagination, Modal, EmptyState } from './CommonComponents';
-import { competencyService } from '../services/api';
+import { competencyService } from './servicesApi';
 
 export default function CompetencyManagement() {
   const [competencies, setCompetencies] = useState([]);

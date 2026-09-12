@@ -19,7 +19,7 @@ import {
   FiMessageSquare
 } from 'react-icons/fi';
 import { StatusBadge, ProgressBar, Modal } from './CommonComponents';
-import { courseService } from '../services/api';
+import { courseService } from './servicesApi';
 
 export default function CourseDetail({ courseId = 'crs-201', onNavigate, onBack }) {
   const [course, setCourse] = useState(null);

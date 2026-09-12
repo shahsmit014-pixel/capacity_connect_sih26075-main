@@ -16,7 +16,7 @@ import {
   FiTerminal,
   FiAlertCircle
 } from 'react-icons/fi';
-import { getBackendConfig, setBackendConfig, testBackendConnection } from '../services/api';
+import { getBackendConfig, setBackendConfig, testBackendConnection } from './servicesApi';
 
 export default function PlatformSettings() {
   const [activeTab, setActiveTab] = useState('Database');

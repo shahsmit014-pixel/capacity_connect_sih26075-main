@@ -15,7 +15,7 @@ import {
   FiRefreshCw
 } from 'react-icons/fi';
 import { StatCard, StatusBadge, Modal, EmptyState } from './CommonComponents';
-import { approvalService } from '../services/api';
+import { approvalService } from './servicesApi';
 
 export default function ApprovalCenter() {
   const [requests, setRequests] = useState([]);

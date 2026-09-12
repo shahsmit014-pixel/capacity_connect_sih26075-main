@@ -13,7 +13,7 @@ import {
   FiRefreshCw
 } from 'react-icons/fi';
 import { StatCard, StatusBadge, ProgressBar, Pagination, Modal, EmptyState } from './CommonComponents';
-import { userService } from '../services/api';
+import { userService } from './servicesApi';
 
 export default function LearnerManagement({ onNavigate, onSelectUser }) {
   const [learners, setLearners] = useState([]);

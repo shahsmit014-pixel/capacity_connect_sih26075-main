@@ -12,7 +12,7 @@ import {
   FiRefreshCw
 } from 'react-icons/fi';
 import { StatusBadge, Pagination, Modal, EmptyState } from './CommonComponents';
-import { userService } from '../services/api';
+import { userService } from './servicesApi';
 
 export default function UserManagement({ onNavigate, onSelectUser }) {
   const [users, setUsers] = useState([]);
