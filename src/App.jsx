@@ -12,8 +12,8 @@ import Login from "./Pages/Auth/Login/Login";
 // LEARNER ROUTES
 // ================================
 import LearnerRoutes from "./routes/LearnerRoutes";
-import AdminDashboard from "./Pages/Admin/AdminDashboard";
 
+import AdminRoutes from "./routes/AdminRoutes"
 function App() {
   return (
     // <BrowserRouter>
@@ -71,7 +71,11 @@ function App() {
     //     <Route path="/learner/*" element={<LearnerRoutes />} />
     //   </Routes>
     // </BrowserRouter>
-    <AdminDashboard/>
+    // <AdminDashboard/>
+   <BrowserRouter>
+  <AdminRoutes/>
+      </BrowserRouter> 
+   
   );
 }
 

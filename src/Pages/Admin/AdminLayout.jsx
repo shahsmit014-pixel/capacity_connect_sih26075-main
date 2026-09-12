@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import './AdminLayout.css';
 import {
   FiGrid,
@@ -41,25 +42,87 @@ export const MENU_ITEMS = [
 ];
 
 export default function AdminLayout({
-  children,
-  activePage = 'dashboard',
-  onNavigate,
-  pageTitle = 'Dashboard',
-  breadcrumbs = ['Admin', 'Dashboard'],
+  children = null,
+  activePage = '',
+  onNavigate = null,
+  pageTitle = '',
+  breadcrumbs = null,
   pendingApprovalsCount = 34
 }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
   const [globalSearch, setGlobalSearch] = useState('');
+  const [avatarError, setAvatarError] = useState(false);
+  const [navAvatarError, setNavAvatarError] = useState(false);
 
-  const handleNavClick = (itemId) => {
+  // Determine active item from location if activePage prop is not explicitly given
+  const currentPath = location.pathname.toLowerCase();
+  let resolvedActivePage = activePage;
+  if (!resolvedActivePage) {
+    if (currentPath.includes('/users')) resolvedActivePage = 'users';
+    else if (currentPath.includes('/trainers')) resolvedActivePage = 'trainers';
+    else if (currentPath.includes('/learners')) resolvedActivePage = 'learners';
+    else if (currentPath.includes('/courses')) resolvedActivePage = 'courses';
+    else if (currentPath.includes('/training')) resolvedActivePage = 'training';
+    else if (currentPath.includes('/competencies')) resolvedActivePage = 'competencies';
+    else if (currentPath.includes('/knowledge-hub')) resolvedActivePage = 'knowledge-hub';
+    else if (currentPath.includes('/approvals')) resolvedActivePage = 'approvals';
+    else if (currentPath.includes('/analytics')) resolvedActivePage = 'analytics';
+    else if (currentPath.includes('/reports')) resolvedActivePage = 'reports';
+    else if (currentPath.includes('/settings')) resolvedActivePage = 'settings';
+    else resolvedActivePage = 'dashboard';
+  }
+
+  // Derive title and breadcrumbs if not provided
+  const titleMap = {
+    dashboard: { title: 'Executive Dashboard', crumbs: ['Capacity Connect', 'Executive Dashboard'] },
+    users: { title: 'User Management Directory', crumbs: ['Capacity Connect', 'Users', 'All Users'] },
+    trainers: { title: 'Trainer Management & Roster', crumbs: ['Capacity Connect', 'Faculty', 'Trainers'] },
+    learners: { title: 'Learner Cohort Tracking', crumbs: ['Capacity Connect', 'Learners', 'Active Cohorts'] },
+    courses: { title: 'Curriculum & Course Repository', crumbs: ['Capacity Connect', 'Curricula', 'All Courses'] },
+    training: { title: 'Capacity Building Programs', crumbs: ['Capacity Connect', 'Programs', 'Active Schedules'] },
+    competencies: { title: 'Competency Framework (iGOT/FRAC)', crumbs: ['Capacity Connect', 'Competency Mapping'] },
+    'knowledge-hub': { title: 'Knowledge Hub & Digital Repository', crumbs: ['Capacity Connect', 'Repository', 'Guidelines & SOPs'] },
+    approvals: { title: 'Workflow & Verification Approval Center', crumbs: ['Capacity Connect', 'Governance', 'Approvals Queue'] },
+    analytics: { title: 'Enterprise Capacity Analytics', crumbs: ['Capacity Connect', 'Intelligence', 'KPI Metrics'] },
+    reports: { title: 'Compliance & Audit Reports', crumbs: ['Capacity Connect', 'Audit Logs', 'Export Center'] },
+    settings: { title: 'System Configuration & Integrations', crumbs: ['Capacity Connect', 'Settings', 'Backend & Portal'] },
+  };
+
+  const resolvedTitle = pageTitle || titleMap[resolvedActivePage]?.title || 'Executive Dashboard';
+  const resolvedBreadcrumbs = breadcrumbs || titleMap[resolvedActivePage]?.crumbs || ['Admin', 'Dashboard'];
+
+  const handleNavClick = (itemId, targetPath) => {
     if (onNavigate) {
       onNavigate(itemId);
+    } else {
+      const item = MENU_ITEMS.find((m) => m.id === itemId);
+      navigate(targetPath || item?.path || `/admin/${itemId}`);
     }
     setMobileMenuOpen(false);
+  };
+
+  const handleGlobalSearch = (e) => {
+    if (e.key === 'Enter' && globalSearch.trim()) {
+      const q = globalSearch.trim().toLowerCase();
+      if (q.includes('user') || q.includes('admin') || q.includes('profile')) {
+        handleNavClick('users', '/admin/users');
+      } else if (q.includes('course') || q.includes('cyber') || q.includes('procurement')) {
+        handleNavClick('courses', '/admin/courses');
+      } else if (q.includes('approval') || q.includes('pending')) {
+        handleNavClick('approvals', '/admin/approvals');
+      } else if (q.includes('trainer')) {
+        handleNavClick('trainers', '/admin/trainers');
+      } else {
+        handleNavClick('courses', '/admin/courses');
+      }
+    }
   };
 
   return (
@@ -85,13 +148,13 @@ export default function AdminLayout({
         <nav className="sidebar-nav-container">
           {MENU_ITEMS.map((item) => {
             const Icon = item.icon;
-            const isActive = activePage === item.id;
+            const isActive = resolvedActivePage === item.id;
             return (
               <button
                 key={item.id}
                 id={`sidebar-link-${item.id}`}
                 className={`sidebar-nav-item ${isActive ? 'active' : ''}`}
-                onClick={() => handleNavClick(item.id)}
+                onClick={() => handleNavClick(item.id, item.path)}
                 title={item.label}
               >
                 <span className="sidebar-icon">
@@ -107,12 +170,17 @@ export default function AdminLayout({
         </nav>
 
         <div className="sidebar-footer">
-          <div className="admin-profile-card" onClick={() => handleNavClick('settings')} title="View Admin Profile">
-            <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
-              alt="Dr. Rajesh Sharma"
-              className="admin-avatar"
-            />
+          <div className="admin-profile-card" onClick={() => handleNavClick('settings', '/admin/settings')} title="View Admin Profile">
+            {avatarError ? (
+              <div className="admin-avatar-fallback">RS</div>
+            ) : (
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+                alt="Dr. Rajesh Sharma"
+                className="admin-avatar"
+                onError={() => setAvatarError(true)}
+              />
+            )}
             <div className="admin-profile-info">
               <span className="admin-name">Dr. Rajesh Sharma</span>
               <span className="admin-role">Administrator</span>
@@ -148,12 +216,12 @@ export default function AdminLayout({
               <FiMenu />
             </button>
             <div className="page-title-group">
-              <h1 className="navbar-page-title">{pageTitle}</h1>
+              <h1 className="navbar-page-title">{resolvedTitle}</h1>
               <div className="navbar-breadcrumb">
-                {breadcrumbs.map((crumb, idx) => (
+                {resolvedBreadcrumbs.map((crumb, idx) => (
                   <React.Fragment key={idx}>
                     <span>{crumb}</span>
-                    {idx < breadcrumbs.length - 1 && <span className="breadcrumb-sep">/</span>}
+                    {idx < resolvedBreadcrumbs.length - 1 && <span className="breadcrumb-sep">/</span>}
                   </React.Fragment>
                 ))}
               </div>
@@ -166,10 +234,11 @@ export default function AdminLayout({
               <FiSearch className="navbar-search-icon" />
               <input
                 type="text"
-                placeholder="Search users, courses, resources..."
+                placeholder="Search users, courses, resources (Press Enter)..."
                 className="navbar-search-input"
                 value={globalSearch}
                 onChange={(e) => setGlobalSearch(e.target.value)}
+                onKeyDown={handleGlobalSearch}
               />
             </div>
 
@@ -177,7 +246,7 @@ export default function AdminLayout({
               {/* Backend API & DB Status Pill */}
               <button
                 className="backend-status-btn"
-                onClick={() => onNavigate('settings')}
+                onClick={() => handleNavClick('settings', '/admin/settings')}
                 title={`Configured Backend: ${getBackendConfig().baseUrl} (${getBackendConfig().dbDialect}). Click to configure.`}
                 style={{
                   display: 'inline-flex',
@@ -237,11 +306,16 @@ export default function AdminLayout({
                     setShowMessages(false);
                   }}
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
-                    alt="Admin"
-                    className="nav-avatar"
-                  />
+                  {navAvatarError ? (
+                    <div className="nav-avatar-fallback">RS</div>
+                  ) : (
+                    <img
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+                      alt="Admin"
+                      className="nav-avatar"
+                      onError={() => setNavAvatarError(true)}
+                    />
+                  )}
                   <span className="nav-user-name">Dr. Rajesh Sharma</span>
                   <FiChevronDown className="nav-arrow" />
                 </button>
@@ -339,7 +413,7 @@ export default function AdminLayout({
 
         {/* PAGE CONTENT CONTAINER */}
         <main className="admin-main-content">
-          {children}
+          {children || <Outlet />}
         </main>
       </div>
     </div>
